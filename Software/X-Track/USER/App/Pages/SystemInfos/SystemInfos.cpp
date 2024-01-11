@@ -21,10 +21,13 @@ void SystemInfos::onViewLoad()
 {
     Model.Init();
     View.Create(_root);
-    AttachEvent(_root);
-    AttachEvent(View.LauncherData_t.appPanel);
+    //AttachEvent(_root);
+    //lv_obj_add_event_cb(View.LauncherData_t.appPanel, onEvent, LV_EVENT_SCROLL, this);
 
-    SystemInfosView::item_t* item_grp = ((SystemInfosView::item_t*)&View.ui);
+    AttachEvent(View.LauncherData_t.appPanel);
+    //AttachEvent(View.ui.sport.cont);
+
+   SystemInfosView::item_t* item_grp = ((SystemInfosView::item_t*)&View.ui);
 
     for (int i = 0; i < sizeof(View.ui) / sizeof(SystemInfosView::item_t); i++)
     {
@@ -114,19 +117,30 @@ void SystemInfos::onEvent(lv_event_t* event)
             instance->_Manager->Pop();
         }
     }
-    /* Pressed feedback */
-    //else if (code == LV_EVENT_PRESSED) {
-    //    /* If pressed, smaller Icon */
-    //    lv_img_set_zoom(lv_event_get_current_target(event), 10);
-    //}
-    //else if (code == LV_EVENT_RELEASED) {
-    //    /* If released, set it back */
-    //    lv_img_set_zoom(lv_event_get_current_target(event),  10);
-    //}
+    if (obj != instance->View.LauncherData_t.appPanel)
+    {
+        /* Pressed feedback */
+        if (code == LV_EVENT_PRESSED) {
+            /* If pressed, smaller Icon */
+            lv_img_set_zoom(lv_event_get_target(event), lv_img_get_zoom(lv_event_get_target(event)) - 10);
+        }
+        if (code == LV_EVENT_RELEASED) {
+            /* If released, set it back */
+            lv_img_set_zoom(lv_event_get_target(event), lv_img_get_zoom(lv_event_get_target(event)) + 10);
+        }
+    }
     /* If scrolling, update Icon zooming */
-    else if (code == LV_EVENT_SCROLL) {
+    if (code == LV_EVENT_SCROLL) {
         /* Get launcher pointer */
         instance->View.updateAppIconZoom(instance->View.LauncherData_t.appPanel);
+    }
+    /* Start App */
+    if (code == LV_EVENT_SHORT_CLICKED) {
+        if (obj = instance->View.ui.sport.cont)
+        {
+            instance->_Manager->Push("Pages/LiveMap");
+        }
+
     }
     //if (code == LV_EVENT_PRESSED)
     //{

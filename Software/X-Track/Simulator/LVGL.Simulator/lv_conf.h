@@ -34,7 +34,7 @@
 
 /*Swap the 2 bytes of RGB565 color. Useful if the display has an 8-bit interface (e.g. SPI)*/
 #ifndef LV_COLOR_16_SWAP
-#define LV_COLOR_16_SWAP 1
+#define LV_COLOR_16_SWAP 0
 #endif
 
 /*Enable features to draw on transparent background.
