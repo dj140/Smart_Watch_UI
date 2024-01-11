@@ -2165,6 +2165,15 @@
     <ClCompile Include="..\..\USER\App\Resource\Image\img_stopwatch_png.c">
       <Filter>App\Resource\Image</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_app_icon_hdpi_boxing_png.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_app_icon_hdpi_pingpong_png.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_app_icon_hdpi_settings_png.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="lvgl\.github\ISSUE_TEMPLATE\bug-report.md">

@@ -7,268 +7,56 @@ using namespace Page;
 
 void SystemInfosView::Create(lv_obj_t* root)
 {
-    //lv_obj_set_style_pad_ver(root, ITEM_PAD, 0);
-    //lv_obj_set_flex_flow(root, LV_FLEX_FLOW_COLUMN);
-    //lv_obj_set_flex_align(
-    //    root,
-    //    LV_FLEX_ALIGN_START,
-    //    LV_FLEX_ALIGN_START,
-    //    LV_FLEX_ALIGN_CENTER
-    //);
+    LauncherData_t.icon_x = 0;
+    LauncherData_t.icon_y = 0;
+    LauncherData_t.is_long_row = true;  
+    lv_obj_t* appPanel = lv_obj_create(root);
+    lv_obj_remove_style_all(appPanel);
 
-    //Style_Init();
+    lv_obj_set_size(appPanel, 397, 397);
+    //lv_obj_clear_flag(root, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_clear_flag(appPanel, LV_OBJ_FLAG_GESTURE_BUBBLE);      /// Flags
+    lv_obj_align(appPanel, LV_ALIGN_BOTTOM_MID, 0, 0);
+    LauncherData_t.appPanel = appPanel;
+    /* Ser style */
+    lv_obj_set_style_radius(appPanel, 0, LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(appPanel, 0, LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(appPanel, 0, LV_STATE_DEFAULT);
 
+    /* Add scroll flags */
+    lv_obj_add_flag(appPanel, LV_OBJ_FLAG_SCROLL_ELASTIC | LV_OBJ_FLAG_SCROLL_MOMENTUM);
+    lv_obj_set_scrollbar_mode(appPanel, LV_SCROLLBAR_MODE_ON);
+    lv_obj_set_scroll_dir(appPanel, LV_DIR_VER);
+        /* Update bubble config */
+    _bubble_cfg.iconColMax = 400 / 108;
+    _bubble_cfg.iconRowMax = 400 / 108;
+    _bubble_cfg.iconColNum = (13 - 1) / _bubble_cfg.iconRowMax;
+    if (((13 - 1) % _bubble_cfg.iconRowMax) != 0) {
+        _bubble_cfg.iconColNum++;
+    }
+    _bubble_cfg.iconSpaceX = 400 / _bubble_cfg.iconColMax;
+    lv_coord_t gap_between_icon = (400 - 108 * _bubble_cfg.iconColMax) / (_bubble_cfg.iconColMax + 1);
+    _bubble_cfg.iconSpaceY = 108 - (gap_between_icon / 2);
+    _bubble_cfg.iconXoffset = -(400 / 2) + (_bubble_cfg.iconSpaceX / 2);
+    _bubble_cfg.iconYoffset = -(400 / 2) + (_bubble_cfg.iconSpaceY / 2) + gap_between_icon;
     /* Item Sport */
-    Item_Create(&ui.sport,root,"Sport","bluetooth_png");
+    Item_Create(&ui.sport, appPanel,"Sport","app_icon_hdpi_settings_png");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.gps, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.imu, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.mag, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.rtc, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.storage, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.system, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_hdpi_settings_png");
+    lv_obj_scroll_to_y(appPanel, 1, LV_ANIM_OFF);
 
-    ///* Item GPS */
-    //Item_Create(
-    //    &ui.gps,
-    //    root,
-    //    "GPS",
-    //    "map_location",
-
-    //    "Latitude\n"
-    //    "Longitude\n"
-    //    "Altitude\n"
-    //    "UTC Time\n\n"
-    //    "Course\n"
-    //    "Speed"
-    //);
-
-    ///* Item MAG */
-    //Item_Create(
-    //    &ui.mag,
-    //    root,
-    //    "MAG",
-    //    "compass",
-
-    //    "Compass\n"
-    //    "X\n"
-    //    "Y\n"
-    //    "Z"
-    //);
-
-    ///* Item IMU */
-    //Item_Create(
-    //    &ui.imu,
-    //    root,
-    //    "IMU",
-    //    "gyroscope",
-
-    //    "Step\n"
-    //    "Ax\n"
-    //    "Ay\n"
-    //    "Az\n"
-    //    "Gx\n"
-    //    "Gy\n"
-    //    "Gz"
-    //);
-
-    ///* Item RTC */
-    //Item_Create(
-    //    &ui.rtc,
-    //    root,
-    //    "RTC",
-    //    "time_info",
-
-    //    "Date\n"
-    //    "Time"
-    //);
-
-    ///* Item Battery */
-    //Item_Create(
-    //    &ui.battery,
-    //    root,
-    //    "Battery",
-    //    "battery_info",
-
-    //    "Usage\n"
-    //    "Voltage\n"
-    //    "Status"
-    //);
-
-    ///* Item Storage */
-    //Item_Create(
-    //    &ui.storage,
-    //    root,
-    //    "Storage",
-    //    "storage",
-
-    //    "Status\n"
-    //    "Size\n"
-    //    "Type\n"
-    //    "Version"
-    //);
-
-    ///* Item System */
-    //Item_Create(
-    //    &ui.system,
-    //    root,
-    //    "System",
-    //    "system_info",
-
-    //    "Firmware\n"
-    //    "Author\n"
-    //    "LVGL\n"
-    //    "SysTick\n"
-    //    "Compiler\n\n"
-    //    "Build\n"
-    //);
-
-    //Group_Init();
 }
-void SystemInfosView::create_app_panel(lv_obj_t* par)
-{
-//    /**
-//     * @brief App panel
-//     *
-//     */
-//
-//    /* Create a panel */
-//    lv_obj_t* cont = lv_obj_create(par);
-//
-//    lv_obj_set_size(cont, 240, 240);
-//    lv_obj_align(cont, LV_ALIGN_BOTTOM_MID, 0, 0);
-//
-//    /* Ser style */
-//    lv_obj_set_style_radius(cont, 0, LV_STATE_DEFAULT);
-//    lv_obj_set_style_bg_opa(cont, 0, LV_STATE_DEFAULT);
-//    lv_obj_set_style_border_opa(cont, 0, LV_STATE_DEFAULT);
-//
-//    /* Add scroll flags */
-//    lv_obj_add_flag(cont, LV_OBJ_FLAG_SCROLL_ELASTIC | LV_OBJ_FLAG_SCROLL_MOMENTUM);
-//    lv_obj_set_scrollbar_mode(cont, LV_SCROLLBAR_MODE_OFF);
-//
-//#if SCROLL_VER
-//    lv_obj_set_scroll_dir(cont, LV_DIR_VER);
-//#else 
-//    lv_obj_set_scroll_dir(cont, LV_DIR_HOR);
-//#endif
-//
-//    //lv_obj_add_event_cb(cont, _lvgl_event_cb, LV_EVENT_SCROLL, (void*)this);
-//
-//
-//    /**
-//     * @brief App bubble pool
-//     *
-//     */
-//
-//     /* Update bubble config */
-//    _bubble_cfg.iconColMax = LauncherData_t.appPanelHor / 108;
-//    _bubble_cfg.iconRowMax = LauncherData_t.appPanelVer / 108;
-//    _bubble_cfg.iconColNum = (10 - 1) / _bubble_cfg.iconRowMax;
-//    if (((10 - 1) % _bubble_cfg.iconRowMax) != 0) {
-//        _bubble_cfg.iconColNum++;
-//    }
-//    _bubble_cfg.iconSpaceX = LauncherData_t.appPanelHor / _bubble_cfg.iconColMax;
-//    lv_coord_t gap_between_icon = (LauncherData_t.appPanelHor - 108 * _bubble_cfg.iconColMax) / (_bubble_cfg.iconColMax + 1);
-//    _bubble_cfg.iconSpaceY = 108 - (gap_between_icon / 2);
-//    _bubble_cfg.iconXoffset = -(LauncherData_t.appPanelHor / 2) + (_bubble_cfg.iconSpaceX / 2);
-//    _bubble_cfg.iconYoffset = -(LauncherData_t.appPanelVer / 2) + (_bubble_cfg.iconSpaceY / 2) + gap_between_icon;
-//
-//
-//    int icon_x = 0;
-//    int icon_y = 0;
-//    /* Long row first */
-//    bool is_long_row = true;
-//
-//    /* Put App Icon into bubble pool */
-//    for (auto i : _framework->getAppList()) {
-//        /* If is launcher */
-//        if (i.app == this) {
-//            continue;
-//        }
-//
-//        /* Create a object */
-//        lv_obj_t* app = lv_img_create(cont);
-//        lv_obj_center(app);
-//
-//        /* If App Icon is not set, use default */
-//        if (i.app->getAppIcon() == nullptr) {
-//            lv_img_set_src(app, &USING_ICON);
-//        }
-//        else {
-//            lv_img_set_src(app, i.app->getAppIcon());
-//        }
-//
-//
-//
-//        /**
-//         * @brief Vertical
-//         *
-//         */
-//#if SCROLL_VER
-//
-//         /* Put App in hexagon mesh */
-//        if (!is_long_row) {
-//            lv_obj_set_pos(app, icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, icon_y + _bubble_cfg.iconYoffset);
-//        }
-//        else {
-//            lv_obj_set_pos(app, icon_x + _bubble_cfg.iconXoffset, icon_y + _bubble_cfg.iconYoffset);
-//        }
-//
-//        /* Go to next col */
-//        icon_x += _bubble_cfg.iconSpaceX;
-//
-//        /* Go to next more Apps row */
-//        if (!is_long_row && ((icon_x / _bubble_cfg.iconSpaceX) >= (_bubble_cfg.iconColMax - 1))) {
-//            is_long_row = true;
-//            icon_x = 0;
-//            icon_y += _bubble_cfg.iconSpaceY;
-//        }
-//        /* Go to next less Apps row */
-//        else if (is_long_row && ((icon_x / _bubble_cfg.iconSpaceX) >= _bubble_cfg.iconColMax)) {
-//            is_long_row = false;
-//            icon_x = 0;
-//            icon_y += _bubble_cfg.iconSpaceY;
-//        }
-//
-//        /**
-//         * @brief Horizontal
-//         *
-//         */
-//#else
-//
-//         /* Put App in hexagon mesh */
-//        if (!is_long_row) {
-//            lv_obj_set_pos(app, icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, icon_y + _bubble_cfg.iconYoffset);
-//        }
-//        else {
-//            lv_obj_set_pos(app, icon_x + _bubble_cfg.iconXoffset, icon_y + _bubble_cfg.iconYoffset);
-//        }
-//
-//        /* Go to next col */
-//        icon_x += _bubble_cfg.iconSpaceX;
-//
-//        /* Next row */
-//        if ((icon_x / _bubble_cfg.iconSpaceX) >= _bubble_cfg.iconColNum) {
-//            is_long_row = is_long_row ? false : true;
-//            printf("%d\n", is_long_row);
-//            icon_x = 0;
-//            icon_y += _bubble_cfg.iconSpaceY;
-//        }
-//
-//#endif
-//
-//
-//        /* Set App pointer as user data */
-//        lv_obj_set_user_data(app, (void*)i.app);
-//
-//        /* Add event callback */
-//        lv_obj_add_flag(app, LV_OBJ_FLAG_CLICKABLE);
-//        lv_obj_set_style_img_recolor(app, lv_color_hex(0x000000), LV_STATE_PRESSED);
-//        lv_obj_set_style_img_recolor_opa(app, 50, LV_STATE_PRESSED);
-//        //lv_obj_add_event_cb(app, _lvgl_event_cb, LV_EVENT_ALL, (void*)_framework);
-//    }
-//
-//    /* Hit an event to update icon zoom once */
-//#if SCROLL_VER
-//    lv_obj_scroll_to_y(cont, 1, LV_ANIM_OFF);
-//#else
-//    lv_obj_scroll_to_x(cont, 1, LV_ANIM_OFF);
-//#endif
-}
+
 
 void SystemInfosView::Group_Init()
 {
@@ -292,7 +80,41 @@ void SystemInfosView::Delete()
  /*   lv_group_set_focus_cb(lv_group_get_default(), nullptr);
     Style_Reset();*/
 }
+void SystemInfosView::updateAppIconZoom(lv_obj_t* obj)
+{
+    /* Zoom the Icons when reach edge */
+    lv_coord_t scroll_bar_y = lv_obj_get_scroll_y(obj);
+    lv_coord_t zoom_area_half_height = 400 / 4;
+    lv_coord_t zoom_area_edge_t = scroll_bar_y + 400 / 4;
+    lv_coord_t zoom_area_edge_m = scroll_bar_y + 400 / 2;
+    lv_coord_t zoom_area_edge_b = scroll_bar_y + 400 / 4 * 3;
+    lv_coord_t icon_y = 0;
+    int icon_zoom = 256;
 
+    /* Iterate all Icons */
+    for (int i = 0; i < lv_obj_get_child_cnt(obj); i++) {
+        /* Update Icon y */
+        icon_y = lv_obj_get_y2(lv_obj_get_child(obj, i));
+        /* If at not zoom area */
+        if ((icon_y >= zoom_area_edge_t) && (icon_y <= zoom_area_edge_b)) {
+            /* Zoom to normal */
+            icon_zoom = 256;
+        }
+        else {
+            /* Get how far Icon is out of edge */
+            icon_zoom = abs(icon_y - zoom_area_edge_m) - zoom_area_half_height;
+            /* Smaller it */
+            icon_zoom = 256 - icon_zoom;
+            /* If hit limit */
+            if (icon_zoom < 32) {
+                icon_zoom = 32;
+            }
+        }
+        /* Set zoom */
+        lv_img_set_zoom(lv_obj_get_child(obj, i), icon_zoom);
+    }
+
+}
 void SystemInfosView::SetScrollToY(lv_obj_t* obj, lv_coord_t y, lv_anim_enable_t en)
 {
     lv_coord_t scroll_y = lv_obj_get_scroll_y(obj);
@@ -366,63 +188,46 @@ void SystemInfosView::Item_Create(
     const char* img_src
 )
 {
-    lv_obj_t* cont = lv_obj_create(par);
-    lv_obj_remove_style_all(cont);
-    lv_obj_set_size(cont, 397, 397);
-    lv_obj_clear_flag(cont, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_clear_flag(cont, LV_OBJ_FLAG_GESTURE_BUBBLE);      /// Flags
-    ui.sport.cont = cont;
-    lv_obj_set_style_bg_color(cont, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(cont, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    lv_obj_t* app = lv_img_create(cont);
+    lv_obj_t* app = lv_img_create(par);
+    lv_obj_center(app);
+
     lv_img_set_src(app, ResourcePool::GetImage(img_src));
     lv_obj_set_width(app, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(app, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(app, LV_ALIGN_CENTER);
+    //lv_obj_set_align(app, LV_ALIGN_CENTER);
+    item->cont = app;
+
+    /* Put App in hexagon mesh */
+    if (!LauncherData_t.is_long_row) {
+        lv_obj_set_pos(app, LauncherData_t.icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
+        LV_LOG_USER("lv_obj_set_pos x£º%d£¬y: %d", LauncherData_t.icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
+    }
+    else {
+        lv_obj_set_pos(app, LauncherData_t.icon_x + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
+    }
+    LauncherData_t.icon_x += _bubble_cfg.iconSpaceX;
+
+    /* Go to next more Apps row */
+    if (!LauncherData_t.is_long_row && ((LauncherData_t.icon_x / _bubble_cfg.iconSpaceX) >= (_bubble_cfg.iconColMax - 1))) {
+        LauncherData_t.is_long_row = true;
+        LauncherData_t.icon_x = 0;
+        LauncherData_t.icon_y += _bubble_cfg.iconSpaceY;
+    }
+    /* Go to next less Apps row */
+    else if (LauncherData_t.is_long_row && ((LauncherData_t.icon_x / _bubble_cfg.iconSpaceX) >= _bubble_cfg.iconColMax)) {
+        LauncherData_t.is_long_row = false;
+        LauncherData_t.icon_x = 0;
+        LauncherData_t.icon_y += _bubble_cfg.iconSpaceY;
+    }
+
     lv_obj_add_flag(app, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(app, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    //lv_obj_clear_flag(app, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    //lv_obj_t* cont = lv_obj_create(par);
-    //lv_obj_enable_style_refresh(false);
-    //lv_obj_remove_style_all(cont);
-    //lv_obj_set_width(cont, 220);
-    //lv_obj_clear_flag(cont, LV_OBJ_FLAG_GESTURE_BUBBLE);
-    //lv_obj_clear_flag(cont, LV_OBJ_FLAG_SCROLLABLE);
-    //lv_img_set_src(cont, ResourcePool::GetImage(img_src));
-    //lv_obj_set_align(cont, LV_ALIGN_CENTER);
-    //item->cont = cont;
-
-    //lv_obj_t* label = lv_label_create(icon);
-    //lv_obj_enable_style_refresh(false);
-    //lv_label_set_text(label, name);
-    //item->icon = icon;
-
-    ///* infos */
-    //label = lv_label_create(cont);
-    //lv_obj_enable_style_refresh(false);
-    //lv_label_set_text(label, infos);
-    //lv_obj_add_style(label, &style.info, 0);
-    //lv_obj_align(label, LV_ALIGN_LEFT_MID, 75, 0);
-    //item->labelInfo = label;
-
-    ///* datas */
-    //label = lv_label_create(cont);
-    //lv_obj_enable_style_refresh(false);
-    //lv_label_set_text(label, "-");
-    //lv_obj_add_style(label, &style.data, 0);
-    //lv_obj_align(label, LV_ALIGN_CENTER, 60, 0);
-    //item->labelData = label;
-
-    //lv_obj_move_foreground(icon);
-    //lv_obj_enable_style_refresh(true);
-
-    ///* get real max height */
-    //lv_obj_update_layout(item->labelInfo);
-    //lv_coord_t height = lv_obj_get_height(item->labelInfo);
-    //height = LV_MAX(height, ITEM_HEIGHT_MIN);
-    //lv_obj_set_height(cont, height);
-    //lv_obj_set_height(icon, height);
+    /* Add event callback */
+    lv_obj_add_flag(app, LV_OBJ_FLAG_CLICKABLE);
+    lv_obj_set_style_img_recolor(app, lv_color_hex(0x000000), LV_STATE_PRESSED);
+    lv_obj_set_style_img_recolor_opa(app, 50, LV_STATE_PRESSED);
 }
 
 void SystemInfosView::SetSport(

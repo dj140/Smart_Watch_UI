@@ -24,20 +24,22 @@ public:
     struct
     {
         item_t sport;
-        //item_t gps;
-        //item_t mag;
-        //item_t imu;
-        //item_t rtc;
-        //item_t battery;
-        //item_t storage;
-        //item_t system;
+        item_t gps;
+        item_t mag;
+        item_t imu;
+        item_t rtc;
+        item_t battery;
+        item_t storage;
+        item_t system;
     } ui;
     struct  {
         /* Display data */
         int16_t* dispHor = nullptr;
         int16_t* dispVer = nullptr;
         bool dispModePortrait = false;
-
+        bool is_long_row = true;
+        int icon_x = 0;
+        int icon_y = 0;
         /* Widget */
         lv_obj_t* screenMain = nullptr;
 
@@ -117,6 +119,8 @@ public:
     );
 
     void SetScrollToY(lv_obj_t* obj, lv_coord_t y, lv_anim_enable_t en);
+    void updateAppIconZoom(lv_obj_t* obj);
+
     static void onFocus(lv_group_t* e);
 
 private:

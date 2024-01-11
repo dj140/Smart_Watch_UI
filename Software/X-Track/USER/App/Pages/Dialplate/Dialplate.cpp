@@ -73,7 +73,7 @@ void Dialplate::onViewWillDisappear()
     LV_ASSERT_NULL(group);
     lastFocus = lv_group_get_focused(group);
     lv_group_remove_all_objs(group);
-    //lv_timer_del(timer);
+    lv_timer_del(timer);
     //View.AppearAnimStart(true);
 }
 

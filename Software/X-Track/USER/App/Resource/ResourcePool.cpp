@@ -62,6 +62,9 @@ do{\
         IMPORT_IMG(calculator_png);
         IMPORT_IMG(fileexplorer_png);
         IMPORT_IMG(game_png);
+        IMPORT_IMG(app_icon_hdpi_boxing_png);
+        IMPORT_IMG(app_icon_hdpi_pingpong_png);
+        IMPORT_IMG(app_icon_hdpi_settings_png);
 
     }
 
