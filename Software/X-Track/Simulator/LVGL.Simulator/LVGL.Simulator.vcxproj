@@ -107,6 +107,9 @@
     <ClInclude Include="..\..\USER\App\Pages\SystemInfos\SystemInfos.h" />
     <ClInclude Include="..\..\USER\App\Pages\SystemInfos\SystemInfosModel.h" />
     <ClInclude Include="..\..\USER\App\Pages\SystemInfos\SystemInfosView.h" />
+    <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog.h" />
+    <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_Model.h" />
+    <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.h" />
     <ClInclude Include="..\..\USER\App\Pages\_Template\Template.h" />
     <ClInclude Include="..\..\USER\App\Pages\_Template\TemplateModel.h" />
     <ClInclude Include="..\..\USER\App\Pages\_Template\TemplateView.h" />
@@ -319,6 +322,9 @@
     <ClCompile Include="..\..\USER\App\Pages\SystemInfos\SystemInfos.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\SystemInfos\SystemInfosModel.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\SystemInfos\SystemInfosView.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_Model.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\_Template\Template.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\_Template\TemplateModel.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\_Template\TemplateView.cpp" />

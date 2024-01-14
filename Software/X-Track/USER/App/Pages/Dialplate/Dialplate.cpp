@@ -101,7 +101,7 @@ void Dialplate::Update()
 {
     //    char buf[16];
        /* clock */ 
-
+    
     if (Model.GetClockmin() == 0x00)
     {
         lv_label_set_text_fmt(View.ui.bottomInfo.labelClockmin, "%02d", i++);

@@ -1101,23 +1101,21 @@ static void indev_click_focus(_lv_indev_proc_t * proc)
 * Handle the gesture of indev_proc_p->types.pointer.act_obj
 * @param indev pointer to an input device state
 */
-void indev_gesture(_lv_indev_proc_t * proc)
+void indev_gesture(_lv_indev_proc_t* proc)
 {
 
-    if(proc->types.pointer.scroll_obj) return;
-    if(proc->types.pointer.gesture_sent) return;
+    if (proc->types.pointer.scroll_obj) return;
+    if (proc->types.pointer.gesture_sent) return;
 
-    lv_obj_t * gesture_obj = proc->types.pointer.act_obj;
+    lv_obj_t* gesture_obj = proc->types.pointer.act_obj;
 
     /*If gesture parent is active check recursively the gesture attribute*/
-    while(gesture_obj && lv_obj_has_flag(gesture_obj, LV_OBJ_FLAG_GESTURE_BUBBLE)) {
+    while (gesture_obj && lv_obj_has_flag(gesture_obj, LV_OBJ_FLAG_GESTURE_BUBBLE)) {
         gesture_obj = lv_obj_get_parent(gesture_obj);
     }
-
-    if(gesture_obj == NULL) return;
-
-    if((LV_ABS(proc->types.pointer.vect.x) < indev_act->driver->gesture_min_velocity) &&
-       (LV_ABS(proc->types.pointer.vect.y) < indev_act->driver->gesture_min_velocity)) {
+    if (gesture_obj == NULL) return;
+    if ((LV_ABS(proc->types.pointer.vect.x) < indev_act->driver->gesture_min_velocity) &&
+        (LV_ABS(proc->types.pointer.vect.y) < indev_act->driver->gesture_min_velocity)) {
         proc->types.pointer.gesture_sum.x = 0;
         proc->types.pointer.gesture_sum.y = 0;
     }
@@ -1126,29 +1124,41 @@ void indev_gesture(_lv_indev_proc_t * proc)
     proc->types.pointer.gesture_sum.x += proc->types.pointer.vect.x;
     proc->types.pointer.gesture_sum.y += proc->types.pointer.vect.y;
 
-    if((LV_ABS(proc->types.pointer.gesture_sum.x) > indev_act->driver->gesture_limit) ||
-       (LV_ABS(proc->types.pointer.gesture_sum.y) > indev_act->driver->gesture_limit)) {
+    if ((LV_ABS(proc->types.pointer.gesture_sum.x) > indev_act->driver->gesture_limit) ||
+        (LV_ABS(proc->types.pointer.gesture_sum.y) > indev_act->driver->gesture_limit)) {
 
         proc->types.pointer.gesture_sent = 1;
 
-        if(LV_ABS(proc->types.pointer.gesture_sum.x) > LV_ABS(proc->types.pointer.gesture_sum.y)) {
-            if(proc->types.pointer.gesture_sum.x > 0)
+        if (LV_ABS(proc->types.pointer.gesture_sum.x) > LV_ABS(proc->types.pointer.gesture_sum.y)) {
+            if (proc->types.pointer.gesture_sum.x > 0)
+            {
                 proc->types.pointer.gesture_dir = LV_DIR_RIGHT;
+                LV_LOG_USER("LV_DIR_RIGHT !!!!!!");
+            }
             else
+            {
                 proc->types.pointer.gesture_dir = LV_DIR_LEFT;
+                LV_LOG_USER("LV_DIR_LEFT !!!!!!");
+            }
         }
         else {
-            if(proc->types.pointer.gesture_sum.y > 0)
+            if (proc->types.pointer.gesture_sum.y > 0)
+            {
                 proc->types.pointer.gesture_dir = LV_DIR_BOTTOM;
+                LV_LOG_USER("LV_DIR_BOTTOM !!!!!!");
+            }
             else
+            {
                 proc->types.pointer.gesture_dir = LV_DIR_TOP;
+                LV_LOG_USER("LV_DIR_TOP !!!!!!");
+            }
         }
 
         lv_event_send(gesture_obj, LV_EVENT_GESTURE, indev_act);
-        if(indev_reset_check(proc)) return;
+        LV_LOG_USER("gesture_obj:%d,  LV_EVENT_GESTURE:%d", gesture_obj, LV_EVENT_GESTURE);
+        if (indev_reset_check(proc)) return;
     }
 }
-
 /**
  * Checks if the reset_query flag has been set. If so, perform necessary global indev cleanup actions
  * @param proc pointer to an input device 'proc'

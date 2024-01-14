@@ -1,4 +1,5 @@
 #include "SystemInfosView.h"
+#include "stdlib.h"
 
 using namespace Page;
 
@@ -9,7 +10,7 @@ void SystemInfosView::Create(lv_obj_t* root)
 {
     LauncherData_t.icon_x = 0;
     LauncherData_t.icon_y = 0;
-    LauncherData_t.is_long_row = true;  
+    LauncherData_t.is_long_row = true;
     lv_obj_t* appPanel = lv_obj_create(root);
     lv_obj_remove_style_all(appPanel);
 
@@ -27,7 +28,7 @@ void SystemInfosView::Create(lv_obj_t* root)
     lv_obj_add_flag(appPanel, LV_OBJ_FLAG_SCROLL_ELASTIC | LV_OBJ_FLAG_SCROLL_MOMENTUM);
     lv_obj_set_scrollbar_mode(appPanel, LV_SCROLLBAR_MODE_ON);
     lv_obj_set_scroll_dir(appPanel, LV_DIR_VER);
-        /* Update bubble config */
+    /* Update bubble config */
     _bubble_cfg.iconColMax = 400 / 108;
     _bubble_cfg.iconRowMax = 400 / 108;
     _bubble_cfg.iconColNum = (13 - 1) / _bubble_cfg.iconRowMax;
@@ -40,7 +41,7 @@ void SystemInfosView::Create(lv_obj_t* root)
     _bubble_cfg.iconXoffset = -(400 / 2) + (_bubble_cfg.iconSpaceX / 2);
     _bubble_cfg.iconYoffset = -(400 / 2) + (_bubble_cfg.iconSpaceY / 2) + gap_between_icon;
     /* Item Sport */
-    Item_Create(&ui.sport, appPanel,"Sport","app_icon_hdpi_settings_png");
+    Item_Create(&ui.sport, appPanel, "Sport", "app_icon_hdpi_settings_png");
     Item_Create(&ui.battery, appPanel, "Battery", "app_icon_hdpi_settings_png");
     Item_Create(&ui.gps, appPanel, "Battery", "app_icon_hdpi_settings_png");
     Item_Create(&ui.imu, appPanel, "Battery", "app_icon_hdpi_settings_png");
@@ -77,8 +78,8 @@ void SystemInfosView::Group_Init()
 
 void SystemInfosView::Delete()
 {
- /*   lv_group_set_focus_cb(lv_group_get_default(), nullptr);
-    Style_Reset();*/
+    /*   lv_group_set_focus_cb(lv_group_get_default(), nullptr);
+       Style_Reset();*/
 }
 void SystemInfosView::updateAppIconZoom(lv_obj_t* obj)
 {
@@ -201,7 +202,7 @@ void SystemInfosView::Item_Create(
     /* Put App in hexagon mesh */
     if (!LauncherData_t.is_long_row) {
         lv_obj_set_pos(app, LauncherData_t.icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
-        LV_LOG_USER("lv_obj_set_pos x£º%d£¬y: %d", LauncherData_t.icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
+        LV_LOG_USER("lv_obj_set_pos x:%d,y: %d", LauncherData_t.icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
     }
     else {
         lv_obj_set_pos(app, LauncherData_t.icon_x + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
@@ -256,21 +257,21 @@ void SystemInfosView::SetGPS(
     float speed
 )
 {
-  /*  lv_label_set_text_fmt(
-        ui.gps.labelData,
-        "%0.6f\n"
-        "%0.6f\n"
-        "%0.2fm\n"
-        "%s\n"
-        "%0.1f deg\n"
-        "%0.1fkm/h",
-        lat,
-        lng,
-        alt,
-        utc,
-        course,
-        speed
-    );*/
+    /*  lv_label_set_text_fmt(
+          ui.gps.labelData,
+          "%0.6f\n"
+          "%0.6f\n"
+          "%0.2fm\n"
+          "%s\n"
+          "%0.1f deg\n"
+          "%0.1fkm/h",
+          lat,
+          lng,
+          alt,
+          utc,
+          course,
+          speed
+      );*/
 }
 
 void SystemInfosView::SetMAG(
@@ -280,17 +281,17 @@ void SystemInfosView::SetMAG(
     int z
 )
 {
-   /* lv_label_set_text_fmt(
-        ui.mag.labelData,
-        "%0.1f deg\n"
-        "%d\n"
-        "%d\n"
-        "%d",
-        dir,
-        x,
-        y,
-        z
-    );*/
+    /* lv_label_set_text_fmt(
+         ui.mag.labelData,
+         "%0.1f deg\n"
+         "%d\n"
+         "%d\n"
+         "%d",
+         dir,
+         x,
+         y,
+         z
+     );*/
 }
 
 void SystemInfosView::SetIMU(
@@ -311,10 +312,10 @@ void SystemInfosView::SetRTC(
     const char* dateTime
 )
 {
- /*   lv_label_set_text(
-        ui.rtc.labelData,
-        dateTime
-    );*/
+    /*   lv_label_set_text(
+           ui.rtc.labelData,
+           dateTime
+       );*/
 }
 
 void SystemInfosView::SetBattery(
@@ -323,15 +324,15 @@ void SystemInfosView::SetBattery(
     const char* state
 )
 {
- /*   lv_label_set_text_fmt(
-        ui.battery.labelData,
-        "%d%%\n"
-        "%0.2fV\n"
-        "%s",
-        usage,
-        voltage,
-        state
-    );*/
+    /*   lv_label_set_text_fmt(
+           ui.battery.labelData,
+           "%d%%\n"
+           "%0.2fV\n"
+           "%s",
+           usage,
+           voltage,
+           state
+       );*/
 }
 
 void SystemInfosView::SetStorage(
@@ -341,17 +342,17 @@ void SystemInfosView::SetStorage(
     const char* version
 )
 {
-  /*  lv_label_set_text_fmt(
-        ui.storage.labelData,
-        "%s\n"
-        "%s\n"
-        "%s\n"
-        "%s",
-        detect,
-        size,
-        type,
-        version
-    );*/
+    /*  lv_label_set_text_fmt(
+          ui.storage.labelData,
+          "%s\n"
+          "%s\n"
+          "%s\n"
+          "%s",
+          detect,
+          size,
+          type,
+          version
+      );*/
 }
 
 void SystemInfosView::SetSystem(
@@ -363,19 +364,19 @@ void SystemInfosView::SetSystem(
     const char* bulidTime
 )
 {
-   /* lv_label_set_text_fmt(
-        ui.system.labelData,
-        "%s\n"
-        "%s\n"
-        "%s\n"
-        "%s\n"
-        "%s\n"
-        "%s",
-        firmVer,
-        authorName,
-        lvglVer,
-        bootTime,
-        compilerName,
-        bulidTime
-    );*/
+    /* lv_label_set_text_fmt(
+         ui.system.labelData,
+         "%s\n"
+         "%s\n"
+         "%s\n"
+         "%s\n"
+         "%s\n"
+         "%s",
+         firmVer,
+         authorName,
+         lvglVer,
+         bootTime,
+         compilerName,
+         bulidTime
+     );*/
 }

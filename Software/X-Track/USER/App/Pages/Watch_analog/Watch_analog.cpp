@@ -1,25 +1,25 @@
-#include "Template.h"
+#include "Watch_analog.h"
 
 using namespace Page;
 
-Template::Template()
+Watch_analog::Watch_analog()
     : timer(nullptr)
 {
 }
 
-Template::~Template()
+Watch_analog::~Watch_analog()
 {
 
 }
 
-void Template::onCustomAttrConfig()
+void Watch_analog::onCustomAttrConfig()
 {
     LV_LOG_USER("begin");
     SetCustomCacheEnable(true);
     SetCustomLoadAnimType(PageManager::LOAD_ANIM_OVER_BOTTOM, 1000, lv_anim_path_bounce);
 }
 
-void Template::onViewLoad()
+void Watch_analog::onViewLoad()
 {
     LV_LOG_USER("begin");
     View.Create(_root);
@@ -27,67 +27,67 @@ void Template::onViewLoad()
     AttachEvent(View.ui.cont);
 }
 
-void Template::onViewDidLoad()
+void Watch_analog::onViewDidLoad()
 {
     LV_LOG_USER("begin");
 }
 
-void Template::onViewWillAppear()
+void Watch_analog::onViewWillAppear()
 {
     LV_LOG_USER("begin");
     timer = lv_timer_create(onTimerUpdate, 3000, this);
 }
 
-void Template::onViewDidAppear()
+void Watch_analog::onViewDidAppear()
 {
     LV_LOG_USER("begin");
 }
 
-void Template::onViewWillDisappear()
+void Watch_analog::onViewWillDisappear()
 {
     LV_LOG_USER("begin");
 }
 
-void Template::onViewDidDisappear()
+void Watch_analog::onViewDidDisappear()
 {
     LV_LOG_USER("begin");
     lv_timer_del(timer);
 }
 
-void Template::onViewUnload()
+void Watch_analog::onViewUnload()
 {
     LV_LOG_USER("begin");
 }
 
-void Template::onViewDidUnload()
+void Watch_analog::onViewDidUnload()
 {
     LV_LOG_USER("begin");
 }
 
-void Template::AttachEvent(lv_obj_t* obj)
+void Watch_analog::AttachEvent(lv_obj_t* obj)
 {
-    lv_obj_set_user_data(obj, this);
+    //lv_obj_set_user_data(obj, this);
     lv_obj_add_event_cb(obj, onEvent, LV_EVENT_ALL, this);
 }
 
-void Template::Update()
+void Watch_analog::Update()
 {
-    lv_img_set_src(View.ui.image, ResourcePool::GetImage("app_icon_hdpi_boxing_png"));
-    lv_obj_fade_in(View.ui.image, 2000, 100);
+    //lv_img_set_src(View.ui.image, ResourcePool::GetImage("app_icon_hdpi_boxing_png"));
+    //lv_obj_fade_in(View.ui.image, 2000, 100);
 
 
 }
 
-void Template::onTimerUpdate(lv_timer_t* timer)
+void Watch_analog::onTimerUpdate(lv_timer_t* timer)
 {
-    Template* instance = (Template*)timer->user_data;
+    Watch_analog* instance = (Watch_analog*)timer->user_data;
 
     instance->Update();
 }
 
-void Template::onEvent(lv_event_t* event)
+void Watch_analog::onEvent(lv_event_t* event)
 {
-    Template* instance = (Template*)lv_event_get_user_data(event);
+    Watch_analog* instance = (Watch_analog*)lv_event_get_user_data(event);
     LV_ASSERT_NULL(instance);
 
     lv_obj_t* obj = lv_event_get_current_target(event);

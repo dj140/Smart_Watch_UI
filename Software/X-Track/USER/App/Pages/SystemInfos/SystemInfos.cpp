@@ -26,6 +26,7 @@ void SystemInfos::onViewLoad()
 
     AttachEvent(View.LauncherData_t.appPanel);
     //AttachEvent(View.ui.sport.cont);
+    //AttachEvent(View.ui.gps.cont);
 
    SystemInfosView::item_t* item_grp = ((SystemInfosView::item_t*)&View.ui);
 
@@ -135,12 +136,16 @@ void SystemInfos::onEvent(lv_event_t* event)
         instance->View.updateAppIconZoom(instance->View.LauncherData_t.appPanel);
     }
     /* Start App */
-    if (code == LV_EVENT_SHORT_CLICKED) {
-        if (obj = instance->View.ui.sport.cont)
+    if (code == LV_EVENT_SHORT_CLICKED) 
+    {
+        if (obj == instance->View.ui.sport.cont)
         {
-            instance->_Manager->Push("Pages/LiveMap");
+            instance->_Manager->Push("Pages/_Template");
         }
-
+        if (obj == instance->View.ui.gps.cont)
+        {
+            instance->_Manager->Push("Pages/Watch_analog");
+        }
     }
     //if (code == LV_EVENT_PRESSED)
     //{

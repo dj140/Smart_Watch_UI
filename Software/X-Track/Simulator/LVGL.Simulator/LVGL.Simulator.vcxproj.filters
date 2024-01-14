@@ -418,6 +418,9 @@
     <Filter Include="lvgl\examples\anim">
       <UniqueIdentifier>{effdcfb6-96d7-4c48-b546-18ac6c30c910}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Pages\Watch_analog">
+      <UniqueIdentifier>{303219dd-24af-4c4c-8936-ccb762c68771}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lvgl\examples\get_started\lv_example_get_started.h">
@@ -1037,6 +1040,15 @@
     </ClInclude>
     <ClInclude Include="lvgl\examples\anim\lv_example_anim.h">
       <Filter>lvgl\examples\anim</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog.h">
+      <Filter>App\Pages\Watch_analog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_Model.h">
+      <Filter>App\Pages\Watch_analog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.h">
+      <Filter>App\Pages\Watch_analog</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -2173,6 +2185,15 @@
     </ClCompile>
     <ClCompile Include="..\..\USER\App\Resource\Image\img_src_app_icon_hdpi_settings_png.c">
       <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog.cpp">
+      <Filter>App\Pages\Watch_analog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_Model.cpp">
+      <Filter>App\Pages\Watch_analog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.cpp">
+      <Filter>App\Pages\Watch_analog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
