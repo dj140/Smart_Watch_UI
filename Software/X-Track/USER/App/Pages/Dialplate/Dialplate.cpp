@@ -25,6 +25,8 @@ void Dialplate::onViewLoad()
     View.Create(_root);
     AttachEvent(_root);
     AttachEvent(View.ui.bottomInfo.cont);
+    AttachEvent(View.ui.bottomInfo.bg);
+
     //AttachEvent(View.ui.btnCont.btnRec);
     //AttachEvent(View.ui.btnCont.btnMenu);
 }
@@ -57,7 +59,7 @@ void Dialplate::onViewWillAppear()
 
     Model.SetStatusBarStyle(DataProc::STATUS_BAR_STYLE_TRANSP);
 
-    Update();
+    //Update();
 
     View.AppearAnimStart();
 }
@@ -101,7 +103,7 @@ void Dialplate::Update()
 {
     //    char buf[16];
        /* clock */ 
-    
+
     if (Model.GetClockmin() == 0x00)
     {
         lv_label_set_text_fmt(View.ui.bottomInfo.labelClockmin, "%02d", i++);
@@ -133,7 +135,7 @@ void Dialplate::onTimerUpdate(lv_timer_t* timer)
 {
     Dialplate* instance = (Dialplate*)timer->user_data;
 
-    instance->Update();
+    //instance->Update();
 }
 
 void Dialplate::onBtnClicked(lv_obj_t* btn)
@@ -244,20 +246,37 @@ void Dialplate::onEvent(lv_event_t* event)
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_LEFT) {
             instance->_Manager->Push("Pages/SystemInfos");
         }
+        if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_TOP) {
+            instance->_Manager->Push("Pages/Blood_oxy");
+        }
+        if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_BOTTOM) {
+            instance->_Manager->Push("Pages/Setting");
+        }
     }
+    if (code == LV_EVENT_LONG_PRESSED)
+    {
+        instance->_Manager->Replace("Pages/Watch_analog");
+
+    }
+    //if (code == LV_EVENT_PRESSED)
+    //{
+    //    instance->_Manager->Replace("Pages/Watch_analog");
+
+    //}
     //if (code == LV_EVENT_SHORT_CLICKED)
     //{
-    //    instance->onBtnClicked(obj);
+    //    instance->_Manager->Replace("Pages/Watch_analog");
     //}
-    if (obj == instance->View.ui.btnCont.btnRec)
-    {
-        if (code == LV_EVENT_SHORT_CLICKED)
-        {
-            instance->onRecord(false);
-        }
-        else if (code == LV_EVENT_LONG_PRESSED)
-        {
-            instance->onRecord(true);
-        }
-    }
+
+    //if (obj == instance->View.ui.btnCont.btnRec)
+    //{
+    //    if (code == LV_EVENT_SHORT_CLICKED)
+    //    {
+    //        instance->onRecord(false);
+    //    }
+    //    else if (code == LV_EVENT_LONG_PRESSED)
+    //    {
+    //        instance->onRecord(true);
+    //    }
+    //}
 }

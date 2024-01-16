@@ -421,6 +421,15 @@
     <Filter Include="App\Pages\Watch_analog">
       <UniqueIdentifier>{303219dd-24af-4c4c-8936-ccb762c68771}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Pages\Blood_oxy">
+      <UniqueIdentifier>{bca1a129-aae3-4923-8f88-91f2a1dccd5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Pages\Heartbeat_Measuing">
+      <UniqueIdentifier>{769ae3e7-239f-4171-8172-ffa69bf8051c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Pages\Setting">
+      <UniqueIdentifier>{9f4d7400-14f5-474c-940d-95428473e3ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lvgl\examples\get_started\lv_example_get_started.h">
@@ -1049,6 +1058,33 @@
     </ClInclude>
     <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.h">
       <Filter>App\Pages\Watch_analog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Blood_oxy\Blood_oxy.h">
+      <Filter>App\Pages\Blood_oxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Blood_oxy\Blood_oxy_Model.h">
+      <Filter>App\Pages\Blood_oxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Blood_oxy\Blood_oxy_View.h">
+      <Filter>App\Pages\Blood_oxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Heartbeat_Measuing\Heartbeat_Measuing.h">
+      <Filter>App\Pages\Heartbeat_Measuing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Heartbeat_Measuing\Heartbeat_Measuing_Model.h">
+      <Filter>App\Pages\Heartbeat_Measuing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Heartbeat_Measuing\Heartbeat_Measuing_View.h">
+      <Filter>App\Pages\Heartbeat_Measuing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Setting\Setting.h">
+      <Filter>App\Pages\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Setting\Setting_Model.h">
+      <Filter>App\Pages\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Setting\Setting_View.h">
+      <Filter>App\Pages\Setting</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -2194,6 +2230,96 @@
     </ClCompile>
     <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.cpp">
       <Filter>App\Pages\Watch_analog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Blood_oxy\Blood_oxy.cpp">
+      <Filter>App\Pages\Blood_oxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Blood_oxy\Blood_oxy_Model.cpp">
+      <Filter>App\Pages\Blood_oxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Blood_oxy\Blood_oxy_View.cpp">
+      <Filter>App\Pages\Blood_oxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Heartbeat_Measuing\Heartbeat_Measuing.cpp">
+      <Filter>App\Pages\Heartbeat_Measuing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Heartbeat_Measuing\Heartbeat_Measuing_Model.cpp">
+      <Filter>App\Pages\Heartbeat_Measuing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Heartbeat_Measuing\Heartbeat_Measuing_View.cpp">
+      <Filter>App\Pages\Heartbeat_Measuing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_wave1_png.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_wave2_png.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Setting\Setting.cpp">
+      <Filter>App\Pages\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Setting\Setting_Model.cpp">
+      <Filter>App\Pages\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Setting\Setting_View.cpp">
+      <Filter>App\Pages\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_bg_digital_392x392.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_dot_alpha_8x8.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_icn_flash_blue_alpha_17x21.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_icn_message_alpha_25x25.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_icn_sport_alpha_12x24.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_icn_step_red_alpha_17x21.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_icn_weather_1_alpha_41x33.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_menu_alpha_11x117.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_text_message_alpha_70x70.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_src_text_sport_alpha_50x50.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Font\font_montserratMedium_110.c">
+      <Filter>App\Resource\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Instagram.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Meta.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Reddit.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Spotify.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Twitter.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Vimeo .c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_WeChat .c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_LinkedIn.c">
+      <Filter>App\Resource\Image</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

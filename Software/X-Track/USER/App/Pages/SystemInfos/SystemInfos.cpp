@@ -112,10 +112,14 @@ void SystemInfos::onEvent(lv_event_t* event)
         LV_LOG_USER("LV_EVENT_GESTURE %d", code);
 
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_LEFT) {
-            instance->_Manager->Pop();
+            //instance->_Manager->Push("Pages/Dialplate");
+                    instance->_Manager->Pop();
+
         }
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-            instance->_Manager->Pop();
+            //instance->_Manager->Push("Pages/Dialplate");
+                    instance->_Manager->Pop();
+
         }
     }
     if (obj != instance->View.LauncherData_t.appPanel)
@@ -140,11 +144,11 @@ void SystemInfos::onEvent(lv_event_t* event)
     {
         if (obj == instance->View.ui.sport.cont)
         {
-            instance->_Manager->Push("Pages/_Template");
+            instance->_Manager->BackHome();
         }
         if (obj == instance->View.ui.gps.cont)
         {
-            instance->_Manager->Push("Pages/Watch_analog");
+            //instance->_Manager->Push("Pages/Watch_analog");
         }
     }
     //if (code == LV_EVENT_PRESSED)

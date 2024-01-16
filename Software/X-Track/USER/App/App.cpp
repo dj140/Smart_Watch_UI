@@ -72,7 +72,7 @@ void App_Init()
 
     /* Set screen style */
     lv_obj_t* scr = lv_scr_act();
-    lv_obj_remove_style_all(scr);
+    //lv_obj_remove_style_all(scr);
     lv_obj_set_style_bg_opa(lv_scr_act(), LV_OPA_COVER, 0);
     lv_obj_set_style_bg_color(lv_scr_act(), lv_color_black(), 0);
     lv_obj_clear_flag(scr, LV_OBJ_FLAG_SCROLLABLE);
@@ -100,6 +100,9 @@ void App_Init()
     manager.Install("SystemInfos", "Pages/SystemInfos");
     manager.Install("Startup",     "Pages/Startup");
     manager.Install("Watch_analog", "Pages/Watch_analog");
+    manager.Install("Blood_oxy", "Pages/Blood_oxy");
+    manager.Install("Heartbeat_Measuing", "Pages/Heartbeat_Measuing");
+    manager.Install("Setting", "Pages/Setting");
 
     manager.SetGlobalLoadAnimType(PageManager::LOAD_ANIM_OVER_TOP);
 

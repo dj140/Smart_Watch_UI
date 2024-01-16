@@ -4,11 +4,50 @@
 
 using namespace Page;
 
+int32_t Watch_analog_View::_ui_anim_callback_get_image_angle(lv_anim_t* a)
+{
+    //ui_anim_user_data_t* usr = (ui_anim_user_data_t*)a->user_data;
+    return lv_img_get_angle(ui.ui_min);
+}
+void Watch_analog_View::_ui_anim_callback_set_image_angle(lv_anim_t* a, int32_t v)
+{
+    //ui_anim_user_data_t* usr = (ui_anim_user_data_t*)a->user_data;
+    lv_img_set_angle(ui.ui_min, v);
+   
+}
+void Watch_analog_View::hour_Animation(lv_obj_t* TargetObject, int delay)
+{
+    Watch_analog_View* instance = (Watch_analog_View*)TargetObject->user_data;
+
+    //ui_anim_user_data_t* PropertyAnimation_0_user_data = lv_mem_alloc(sizeof(ui_anim_user_data_t));
+    //PropertyAnimation_0_user_data->target = TargetObject;
+    //PropertyAnimation_0_user_data->val = -1;
+    lv_anim_t PropertyAnimation_0;
+    lv_anim_init(&PropertyAnimation_0);
+    lv_anim_set_time(&PropertyAnimation_0, 1000);
+    //lv_anim_set_user_data(&PropertyAnimation_0, PropertyAnimation_0_user_data);
+    //lv_anim_set_custom_exec_cb(&PropertyAnimation_0, _ui_anim_callback_set_image_angle);
+    lv_anim_set_values(&PropertyAnimation_0, 0, 300);
+    lv_anim_set_path_cb(&PropertyAnimation_0, lv_anim_path_ease_out);
+    lv_anim_set_delay(&PropertyAnimation_0, delay + 0);
+    //lv_anim_set_deleted_cb(&PropertyAnimation_0, _ui_anim_callback_free_user_data);
+    lv_anim_set_playback_time(&PropertyAnimation_0, 0);
+    lv_anim_set_playback_delay(&PropertyAnimation_0, 0);
+    lv_anim_set_repeat_count(&PropertyAnimation_0, 0);
+    lv_anim_set_repeat_delay(&PropertyAnimation_0, 0);
+    lv_anim_set_early_apply(&PropertyAnimation_0, false);
+    //lv_anim_set_get_value_cb(&PropertyAnimation_0, &_ui_anim_callback_get_image_angle);
+    lv_anim_start(&PropertyAnimation_0);
+
+}
+
 void Watch_analog_View::Create(lv_obj_t* root)
 {
 
     lv_obj_t* ui_watch_analog = lv_obj_create(root);
     lv_obj_clear_flag(ui_watch_analog, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_clear_flag(ui_watch_analog, LV_OBJ_FLAG_GESTURE_BUBBLE);      /// Flags
+
     lv_obj_set_style_bg_color(ui_watch_analog, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_watch_analog, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_size(ui_watch_analog, 397, 397);
@@ -176,6 +215,7 @@ void Watch_analog_View::Create(lv_obj_t* root)
     lv_obj_clear_flag(ui_sec, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_pivot(ui_sec, 15, 155);
     lv_img_set_angle(ui_sec, 12000);
+    ui.ui_sec = ui_sec;
 
     lv_obj_t* ui_min = lv_img_create(ui_clock_group);
     lv_img_set_src(ui_min, ResourcePool::GetImage("clockwise_min_png"));
@@ -187,6 +227,7 @@ void Watch_analog_View::Create(lv_obj_t* root)
     lv_obj_add_flag(ui_min, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_min, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_pivot(ui_min, 9, 153);
+    ui.ui_min = ui_min;
 
     lv_obj_t* ui_hour = lv_img_create(ui_clock_group);
     lv_img_set_src(ui_hour, ResourcePool::GetImage("clockwise_hour_png"));
@@ -198,6 +239,7 @@ void Watch_analog_View::Create(lv_obj_t* root)
     lv_obj_add_flag(ui_hour, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_hour, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_pivot(ui_hour, 9, 93);
+    ui.ui_hour = ui_hour;
 
     lv_obj_t* ui_dots_group = lv_obj_create(ui_watch_analog);
     lv_obj_set_width(ui_dots_group, 20);

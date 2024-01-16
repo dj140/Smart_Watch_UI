@@ -26,7 +26,8 @@ do{\
         IMPORT_FONT(bahnschrift_65);
         IMPORT_FONT(agencyb_36);
         IMPORT_FONT(Number_extra);
-        
+        IMPORT_FONT(montserratMedium_110);
+
         /* Import Images */
         IMPORT_IMG(alarm);
         IMPORT_IMG(battery);
@@ -65,6 +66,25 @@ do{\
         IMPORT_IMG(app_icon_hdpi_boxing_png);
         IMPORT_IMG(app_icon_hdpi_pingpong_png);
         IMPORT_IMG(app_icon_hdpi_settings_png);
+        IMPORT_IMG(wave1_png);
+        IMPORT_IMG(bg_digital_392x392);
+        IMPORT_IMG(dot_alpha_8x8);
+        IMPORT_IMG(icn_flash_blue_alpha_17x21);
+        IMPORT_IMG(icn_message_alpha_25x25);
+        IMPORT_IMG(icn_sport_alpha_12x24);
+        IMPORT_IMG(icn_step_red_alpha_17x21);
+        IMPORT_IMG(icn_weather_1_alpha_41x33);
+        IMPORT_IMG(menu_alpha_11x117);
+        IMPORT_IMG(text_message_alpha_70x70);
+        IMPORT_IMG(text_sport_alpha_50x50);
+        IMPORT_IMG(app_icon_Instagram);
+        IMPORT_IMG(app_icon_LinkedIn);
+        IMPORT_IMG(app_icon_Meta);
+        IMPORT_IMG(app_icon_WeChat);
+        IMPORT_IMG(app_icon_Vimeo);
+        IMPORT_IMG(app_icon_Twitter);
+        IMPORT_IMG(app_icon_Spotify);
+        IMPORT_IMG(app_icon_Reddit);
 
     }
 

@@ -97,7 +97,7 @@ void Template::onEvent(lv_event_t* event)
         if (code == LV_EVENT_PRESSED)
         {    
 
-            instance->_Manager->Pop();
+            instance->_Manager->Push("Pages/Dialplate");
         }
     
     if (code == LV_EVENT_GESTURE)
@@ -105,7 +105,7 @@ void Template::onEvent(lv_event_t* event)
         LV_LOG_USER("LV_EVENT_GESTURE %d", code);
 
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_LEFT) {
-            instance->_Manager->Push("Pages/SystemInfos");
+            instance->_Manager->Push("Pages/Dialplate");
         }
     }
 }
