@@ -1,12 +1,12 @@
-#ifndef __WATCH_ANALOG_VIEW_H
-#define __WATCH_ANALOG_VIEW_H
+#ifndef __Watch_cxk_VIEW_H
+#define __Watch_cxk_VIEW_H
 
 #include "../Page.h"
 
 namespace Page
 {
 
-class Watch_analog_View
+class Watch_cxk_View
 {
 public:
     void Create(lv_obj_t* root);

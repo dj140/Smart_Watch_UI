@@ -19,6 +19,8 @@ public:
         lv_obj_t* cont;
         lv_obj_t* image;
 
+        lv_anim_timeline_t* anim_timeline;
+
     } ui;
 
 private:

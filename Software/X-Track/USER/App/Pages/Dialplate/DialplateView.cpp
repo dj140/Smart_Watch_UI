@@ -24,7 +24,7 @@ void DialplateView::Create(lv_obj_t* root)
     lv_coord_t y_tar_bottom = lv_obj_get_y(ui.bottomInfo.labelClockhour);
 	lv_coord_t y_tar_min = lv_obj_get_y(ui.bottomInfo.labelClockmin);
 
-        //lv_coord_t h_tar_btn = lv_obj_get_height(ui.bottomInfo.labelClockhour);
+        lv_coord_t h_tar_btn = lv_obj_get_height(ui.bottomInfo.labelweek);
 
     lv_anim_timeline_wrapper_t wrapper[] =
     {
@@ -34,7 +34,7 @@ void DialplateView::Create(lv_obj_t* root)
                 //ANIM_OPA_DEF(200, ui.bottomInfo.labelClockhour),
 				ANIM_DEF(200, ui.bottomInfo.labelClockmin, y, lv_obj_get_height(ui.bottomInfo.labelClockmin)+400, y_tar_min),
 
-                        //ANIM_DEF(500, ui.bottomInfo.labelClockhour, height, 0, h_tar_btn),
+						//ANIM_OPA_DEF(500, ui.bottomInfo.labelweek),
           /*              ANIM_DEF(600, ui.btnCont.btnRec, height, 0, h_tar_btn),
                         ANIM_DEF(700, ui.btnCont.btnMenu, height, 0, h_tar_btn),*/
                         LV_ANIM_TIMELINE_WRAPPER_END
@@ -227,7 +227,7 @@ void DialplateView::BottomInfo_Create(lv_obj_t* par)
 	lv_label_set_long_mode(home_digital_label_week, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(home_digital_label_week, 34, 143);
 	lv_obj_set_size(home_digital_label_week, 67, 25);
-
+	//lv_style_set_text_opa(home_digital_label_week,10);
 	//Write style for home_digital_label_week, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(home_digital_label_week, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(home_digital_label_week, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -237,11 +237,13 @@ void DialplateView::BottomInfo_Create(lv_obj_t* par)
 	lv_obj_set_style_text_line_space(home_digital_label_week, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_text_align(home_digital_label_week, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_opa(home_digital_label_week, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+	//lv_obj_set_style_bg_color(home_digital_label_week, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_top(home_digital_label_week, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_right(home_digital_label_week, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_bottom(home_digital_label_week, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(home_digital_label_week, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(home_digital_label_week, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+	ui.bottomInfo.labelweek = home_digital_label_week;
 
 	//Write codes home_digital_label_date
 	lv_obj_t* home_digital_label_date = lv_label_create(home_digital);
@@ -264,6 +266,7 @@ void DialplateView::BottomInfo_Create(lv_obj_t* par)
 	lv_obj_set_style_pad_bottom(home_digital_label_date, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(home_digital_label_date, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(home_digital_label_date, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+	ui.bottomInfo.labelday = home_digital_label_date;
 
 	//Write codes home_digital_img_flash
 	lv_obj_t* home_digital_img_flash = lv_img_create(home_digital);

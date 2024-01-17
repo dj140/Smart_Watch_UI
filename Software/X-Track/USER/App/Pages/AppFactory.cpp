@@ -30,6 +30,7 @@
 #include "Blood_oxy/Blood_oxy.h"
 #include "Heartbeat_Measuing/Heartbeat_Measuing.h"
 #include "Setting/Setting.h"
+#include "Watch_cxk/Watch_cxk.h"
 
 #define APP_CLASS_MATCH(className)\
 do{\
@@ -50,6 +51,7 @@ PageBase* AppFactory::CreatePage(const char* name)
     APP_CLASS_MATCH(Blood_oxy);
     APP_CLASS_MATCH(Heartbeat_Measuing);
     APP_CLASS_MATCH(Setting);
+    APP_CLASS_MATCH(Watch_cxk);
 
     return nullptr;
 }

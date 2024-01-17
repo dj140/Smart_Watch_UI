@@ -72,6 +72,8 @@ void Template::AttachEvent(lv_obj_t* obj)
 
 void Template::Update()
 {
+    //lv_obj_fade_out(View.ui.image, 1000, 100);
+
     lv_img_set_src(View.ui.image, ResourcePool::GetImage("app_icon_hdpi_boxing_png"));
     lv_obj_fade_in(View.ui.image, 2000, 100);
 
@@ -107,5 +109,11 @@ void Template::onEvent(lv_event_t* event)
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_LEFT) {
             instance->_Manager->Push("Pages/Dialplate");
         }
+    }
+
+    if (code == LV_EVENT_REFRESH)
+    {
+        LV_LOG_USER("LV_EVENT_SCREEN_LOADED %d", code);
+
     }
 }

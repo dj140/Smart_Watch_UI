@@ -85,6 +85,11 @@ do{\
         IMPORT_IMG(app_icon_Twitter);
         IMPORT_IMG(app_icon_Spotify);
         IMPORT_IMG(app_icon_Reddit);
+        IMPORT_IMG(apple_watch);
+        IMPORT_IMG(cxk_bg);
+        IMPORT_IMG(cxk_hour);
+        IMPORT_IMG(cxk_min);
+        IMPORT_IMG(cxk_sec);
 
     }
 

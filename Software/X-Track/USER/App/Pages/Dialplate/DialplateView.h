@@ -34,6 +34,9 @@ public:
             lv_obj_t* labelClock;
             lv_obj_t* labelClockmin;
             lv_obj_t* labelClockhour;
+            lv_obj_t* labelweek;
+            lv_obj_t* labelday;
+
             SubInfo_t labelInfoGrp[4];
         } bottomInfo;
 

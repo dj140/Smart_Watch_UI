@@ -430,6 +430,9 @@
     <Filter Include="App\Pages\Setting">
       <UniqueIdentifier>{9f4d7400-14f5-474c-940d-95428473e3ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Pages\Watch_cxk">
+      <UniqueIdentifier>{92bcb197-e41d-4dbd-8e39-a8dc00fbd749}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lvgl\examples\get_started\lv_example_get_started.h">
@@ -1085,6 +1088,15 @@
     </ClInclude>
     <ClInclude Include="..\..\USER\App\Pages\Setting\Setting_View.h">
       <Filter>App\Pages\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk.h">
+      <Filter>App\Pages\Watch_cxk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk_Model.h">
+      <Filter>App\Pages\Watch_cxk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk_View.h">
+      <Filter>App\Pages\Watch_cxk</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -2320,6 +2332,30 @@
     </ClCompile>
     <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_LinkedIn.c">
       <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\apple_watch.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_cxk_hour.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_cxk_min.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_cxk_sec.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_cxk_bg.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk.cpp">
+      <Filter>App\Pages\Watch_cxk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk_Model.cpp">
+      <Filter>App\Pages\Watch_cxk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk_View.cpp">
+      <Filter>App\Pages\Watch_cxk</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

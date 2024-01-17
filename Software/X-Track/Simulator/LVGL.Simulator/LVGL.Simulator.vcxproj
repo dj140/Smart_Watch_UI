@@ -119,6 +119,9 @@
     <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog.h" />
     <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_Model.h" />
     <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.h" />
+    <ClInclude Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk.h" />
+    <ClInclude Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk_Model.h" />
+    <ClInclude Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk_View.h" />
     <ClInclude Include="..\..\USER\App\Pages\_Template\Template.h" />
     <ClInclude Include="..\..\USER\App\Pages\_Template\TemplateModel.h" />
     <ClInclude Include="..\..\USER\App\Pages\_Template\TemplateView.h" />
@@ -343,6 +346,9 @@
     <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_Model.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk_Model.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk_View.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\_Template\Template.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\_Template\TemplateModel.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\_Template\TemplateView.cpp" />
@@ -353,6 +359,7 @@
     <ClCompile Include="..\..\USER\App\Resource\Font\font_bahnschrift_65.c" />
     <ClCompile Include="..\..\USER\App\Resource\Font\font_montserratMedium_110.c" />
     <ClCompile Include="..\..\USER\App\Resource\Font\font_Number_extra.c" />
+    <ClCompile Include="..\..\USER\App\Resource\Image\apple_watch.c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Instagram.c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_LinkedIn.c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Meta.c" />
@@ -361,6 +368,10 @@
     <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Twitter.c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_Vimeo .c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\app_icon_WeChat .c" />
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_cxk_bg.c" />
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_cxk_hour.c" />
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_cxk_min.c" />
+    <ClCompile Include="..\..\USER\App\Resource\Image\img_cxk_sec.c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\img_src_app_icon_hdpi_boxing_png.c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\img_src_app_icon_hdpi_pingpong_png.c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\img_src_app_icon_hdpi_settings_png.c" />
