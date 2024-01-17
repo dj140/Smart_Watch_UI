@@ -16,7 +16,7 @@ void Watch_analog::onCustomAttrConfig()
 {
     LV_LOG_USER("begin");
     SetCustomCacheEnable(true);
-    SetCustomLoadAnimType(PageManager::LOAD_ANIM_OVER_BOTTOM, 1000, lv_anim_path_ease_in);
+    SetCustomLoadAnimType(PageManager::LOAD_ANIM_OVER_RIGHT, 200, lv_anim_path_ease_in);
 }
 
 void Watch_analog::onViewLoad()
@@ -116,6 +116,9 @@ void Watch_analog::onEvent(lv_event_t* event)
         }
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_BOTTOM) {
             instance->_Manager->Push("Pages/Setting");
+        }
+        if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
+            instance->_Manager->Replace("Pages/Watch_cxk");
         }
     }
     if (code == LV_EVENT_LONG_PRESSED)

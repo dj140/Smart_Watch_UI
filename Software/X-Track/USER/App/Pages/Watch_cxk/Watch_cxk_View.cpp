@@ -45,6 +45,12 @@ void Watch_cxk_View::Create(lv_obj_t* root)
 
 
 }
+//static lv_obj_t* img;
+
+//static void set_angle(void* img, int32_t v)
+//{
+//    lv_img_set_angle(img, v);
+//}
 void Watch_cxk_View::Watch_Create(lv_obj_t* par)
 {
     lv_obj_t* ui_Watch_cxk = lv_obj_create(par);
@@ -83,7 +89,9 @@ void Watch_cxk_View::Watch_Create(lv_obj_t* par)
     lv_obj_set_align(ui_min, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_min, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_min, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_pivot(ui_min, 9, 153);
+    //lv_img_set_pivot(ui_min, 9, 153);
+    lv_img_set_angle(ui_min, 2600);
+
     ui.ui_min = ui_min;
 
     lv_obj_t* ui_hour = lv_img_create(ui_clock_group);
@@ -95,8 +103,8 @@ void Watch_cxk_View::Watch_Create(lv_obj_t* par)
     lv_obj_set_align(ui_hour, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_hour, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_hour, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_pivot(ui_hour, 15, 100);
-    lv_img_set_angle(ui_hour, 600);
+    //lv_img_set_pivot(ui_hour, 0, 0);
+    lv_img_set_angle(ui_hour, 1000);
 
     ui.ui_hour = ui_hour;
 
@@ -109,9 +117,24 @@ void Watch_cxk_View::Watch_Create(lv_obj_t* par)
     lv_obj_set_align(ui_sec, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_sec, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_sec, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_pivot(ui_sec, 15, 155);
-    lv_img_set_angle(ui_sec, 60);
+    //lv_img_set_pivot(ui_sec, 15, 155);
+    lv_img_set_angle(ui_sec, 0);
     ui.ui_sec = ui_sec;
+
+    ///*Create an animation to set the value*/
+    lv_anim_t a;
+    lv_anim_init(&a);
+    lv_anim_set_exec_cb(&a, (lv_anim_exec_xcb_t)lv_img_set_angle);
+    lv_anim_set_values(&a, 0, 3600);
+    lv_anim_set_repeat_count(&a, LV_ANIM_REPEAT_INFINITE);
+    lv_anim_set_time(&a, 60000);     /*2 sec for 1 turn of the minute hand (1 hour)*/
+    lv_anim_set_var(&a, ui_sec);
+    lv_anim_start(&a);
+
+    //lv_anim_set_var(&a, ui_hour);
+    //lv_anim_set_time(&a, 2000);    /*24 sec for 1 turn of the hour hand*/
+    //lv_anim_set_values(&a, 0, 3600);
+    //lv_anim_start(&a);
 }
 void Watch_cxk_View::Delete()
 {
