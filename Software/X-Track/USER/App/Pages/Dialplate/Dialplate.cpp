@@ -1,8 +1,6 @@
 #include "Dialplate.h"
 
 using namespace Page;
-//static Account* actStatusBar;
-uint8_t i;
 
 Dialplate::Dialplate()
     : recState(RECORD_STATE_READY)
@@ -59,7 +57,7 @@ void Dialplate::onViewWillAppear()
 
     Model.SetStatusBarStyle(DataProc::STATUS_BAR_STYLE_TRANSP);
 
-    //Update();
+    Update();
 
     View.AppearAnimStart();
 }
@@ -101,24 +99,29 @@ void Dialplate::AttachEvent(lv_obj_t* obj)
 
 void Dialplate::Update()
 {
-    //    char buf[16];
-       /* clock */ 
 
-    if (Model.GetClockmin() == 0x00)
-    {
-        lv_label_set_text_fmt(View.ui.bottomInfo.labelClockmin, "%02d", i++);
-        lv_label_set_text_fmt(View.ui.bottomInfo.labelClockhour, "%02d", Model.clock.hour);
+    HAL::Clock_Info_t clockInfo;
+    Model.GetClockinfo(&clockInfo);
 
-        lv_img_set_angle(View.ui.bottomInfo.labelClock, i * 60);
-    }
-    //lv_img_set_angle(View.ui.bottomInfo.labelClock, "%02d", (int)Model.GetSpeed());
+    lv_label_set_text_fmt(View.ui.bottomInfo.labelClockmin, "%02d", clockInfo.minute);
+    lv_label_set_text_fmt(View.ui.bottomInfo.labelClockhour, "%02d", clockInfo.hour);
+
+    //lv_img_set_angle(View.ui.bottomInfo.labelClock, i * 60);
+
+    /* clock */
+    //HAL::Clock_Info_t clock;
+    //if (actStatusBar->Pull("Clock", &clock, sizeof(clock)) == Account::RES_OK)
+    //{
+    //    lv_label_set_text_fmt(View.ui.bottomInfo.labelClockmin, "%02d", clock.minute);
+    //}
+    //    lv_img_set_angle(View.ui.bottomInfo.labelClock, "%02d", (int)Model.GetSpeed());
     //    lv_img_set_angle(ui_sec_dot, hal_time.ui32Second * 60 + hal_time.ui32Hundredths * 6 / 10);
 
     //    lv_label_set_text_fmt(View.ui.bottomInfo.labelInfoGrp[0].lableValue, "%0.1f km/h", Model.GetAvgSpeed());
-    ////    lv_label_set_text(
-    ////        View.ui.bottomInfo.labelInfoGrp[1].lableValue,
-    ////        DataProc::MakeTimeString(Model.sportStatusInfo.singleTime, buf, sizeof(buf))
-    ////    );
+    //    lv_label_set_text(
+    //        View.ui.bottomInfo.labelInfoGrp[1].lableValue,
+    //        DataProc::MakeTimeString(Model.sportStatusInfo.singleTime, buf, sizeof(buf))
+    //    );
     //    lv_label_set_text_fmt(
     //        View.ui.bottomInfo.labelInfoGrp[2].lableValue,
     //        "%0.1f km",
@@ -135,7 +138,7 @@ void Dialplate::onTimerUpdate(lv_timer_t* timer)
 {
     Dialplate* instance = (Dialplate*)timer->user_data;
 
-    //instance->Update();
+    instance->Update();
 }
 
 void Dialplate::onBtnClicked(lv_obj_t* btn)

@@ -4,22 +4,22 @@ using namespace Page;
 
 void DialplateModel::Init()
 {
-        account = new Account("DialplateModel", DataProc::Center(), 0, this);
-        account->Subscribe("Clock");
-        account->Subscribe("Recorder");
-        account->Subscribe("StatusBar");
-        account->Subscribe("GPS");
-        account->Subscribe("MusicPlayer");
-        account->SetEventCallback(onEvent);
+    account = new Account("DialplateModel", DataProc::Center(), 0, this);
+    account->Subscribe("Clock");
+    account->Subscribe("Recorder");
+    account->Subscribe("StatusBar");
+    account->Subscribe("GPS");
+    account->Subscribe("MusicPlayer");
+    account->SetEventCallback(onEvent);
 }
 
 void DialplateModel::Deinit()
 {
-        if (account)
-        {
-            delete account;
-            account = nullptr;
-        }
+    if (account)
+    {
+        delete account;
+        account = nullptr;
+    }
 }
 
 bool DialplateModel::GetGPSReady()
@@ -31,16 +31,15 @@ bool DialplateModel::GetGPSReady()
         }
     return 0;
 }
-bool DialplateModel::GetClockmin()
+void DialplateModel::GetClockinfo(HAL::Clock_Info_t* info)
 {
-    /* clock */
-    HAL::Clock_Info_t clock;
-    if (account->Pull("Clock", &clock, sizeof(clock)) == Account::RES_OK)
+    memset(info, 0, sizeof(HAL::Clock_Info_t));
+    if (account->Pull("Clock", info, sizeof(HAL::Clock_Info_t)) != Account::RES_OK)
     {
-        return 0;
+        return;
     }
-    return false;
 }
+
 int DialplateModel::onEvent(Account* account, Account::EventParam_t* param)
 {
     if (param->event != Account::EVENT_PUB_PUBLISH)

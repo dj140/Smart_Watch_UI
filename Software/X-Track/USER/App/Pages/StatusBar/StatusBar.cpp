@@ -140,24 +140,24 @@ static lv_obj_t* StatusBar_RecAnimLabelCreate(lv_obj_t* par)
 static void StatusBar_Update(lv_timer_t* timer)
 {
     /* satellite */
-    HAL::GPS_Info_t gps;
-    if(actStatusBar->Pull("GPS", &gps, sizeof(gps)) == Account::RES_OK)
-    {
-        lv_label_set_text_fmt(ui.satellite.label, "%d", gps.satellites);
-    }
+    //HAL::GPS_Info_t gps;
+    //if(actStatusBar->Pull("GPS", &gps, sizeof(gps)) == Account::RES_OK)
+    //{
+    //    lv_label_set_text_fmt(ui.satellite.label, "%d", gps.satellites);
+    //}
 
-    DataProc::Storage_Basic_Info_t sdInfo;
-    if(actStatusBar->Pull("Storage", &sdInfo, sizeof(sdInfo)) == Account::RES_OK)
-    {
-        sdInfo.isDetect ? lv_obj_clear_state(ui.imgSD, LV_STATE_DISABLED) : lv_obj_add_state(ui.imgSD, LV_STATE_DISABLED);
-    }
+    //DataProc::Storage_Basic_Info_t sdInfo;
+    //if(actStatusBar->Pull("Storage", &sdInfo, sizeof(sdInfo)) == Account::RES_OK)
+    //{
+    //    sdInfo.isDetect ? lv_obj_clear_state(ui.imgSD, LV_STATE_DISABLED) : lv_obj_add_state(ui.imgSD, LV_STATE_DISABLED);
+    //}
 
     /* clock */
-    HAL::Clock_Info_t clock;
-    if(actStatusBar->Pull("Clock", &clock, sizeof(clock)) == Account::RES_OK)
-    {
-        lv_label_set_text_fmt(ui.labelClock, "%02d:%02d", clock.hour, clock.minute);
-    }
+    //HAL::Clock_Info_t clock;
+    //if(actStatusBar->Pull("Clock", &clock, sizeof(clock)) == Account::RES_OK)
+    //{
+    //    lv_label_set_text_fmt(ui.labelClock, "%02d:%02d", clock.hour, clock.minute);
+    //}
 
     /* battery */
     HAL::Power_Info_t power;
@@ -280,11 +280,11 @@ lv_obj_t* Page::StatusBar_Create(lv_obj_t* par)
     lv_style_set_text_color(&style_label, lv_color_white());
     lv_style_set_text_font(&style_label, ResourcePool::GetFont("bahnschrift_17"));
 
-    /* satellite */
+    ///* satellite */
     lv_obj_t* img = lv_img_create(cont);
-    lv_img_set_src(img, ResourcePool::GetImage("satellite"));
-    lv_obj_align(img, LV_ALIGN_LEFT_MID, 14, 0);
-    ui.satellite.img = img;
+    //lv_img_set_src(img, ResourcePool::GetImage("satellite"));
+    //lv_obj_align(img, LV_ALIGN_LEFT_MID, 14, 0);
+    //ui.satellite.img = img;
 
     lv_obj_t* label = lv_label_create(cont);
     lv_obj_add_style(label, &style_label, 0);
@@ -293,14 +293,14 @@ lv_obj_t* Page::StatusBar_Create(lv_obj_t* par)
     ui.satellite.label = label;
 
     /* sd card */
-    ui.imgSD = StatusBar_SdCardImage_Create(cont);
+    //ui.imgSD = StatusBar_SdCardImage_Create(cont);
 
     /* clock */
-    label = lv_label_create(cont);
-    lv_obj_add_style(label, &style_label, 0);
-    lv_label_set_text(label, "00:00");
-    lv_obj_center(label);
-    ui.labelClock = label;
+    //label = lv_label_create(cont);
+    //lv_obj_add_style(label, &style_label, 0);
+    //lv_label_set_text(label, "00:00");
+    //lv_obj_center(label);
+    //ui.labelClock = label;
 
     /* recorder */
     ui.labelRec = StatusBar_RecAnimLabelCreate(cont);

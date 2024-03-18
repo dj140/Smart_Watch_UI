@@ -18,7 +18,8 @@ void TemplateView::Create(lv_obj_t* root)
     ui.cont = cont;
 
     lv_obj_t* image = lv_img_create(cont);
-    lv_img_set_src(image, ResourcePool::GetImage("bg1_png"));
+    lv_img_set_src(image, ResourcePool::GetImage("SHM_Logo"));
+    lv_obj_set_align(image, LV_ALIGN_CENTER);
     lv_obj_fade_in(image, 2000, 0);
     ui.image = image;
 

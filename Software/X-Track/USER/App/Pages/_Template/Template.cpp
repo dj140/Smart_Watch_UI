@@ -2,6 +2,14 @@
 
 using namespace Page;
 
+uint32_t counter = 0;
+uint8_t  ubNumberOfFiles = 10;
+uint8_t str[10];
+#define MAX_BMP_FILES     10
+#define MAX_BMP_FILE_NAME 10
+char* pDirectoryFiles[MAX_BMP_FILES];
+uint8_t num = 1;
+
 Template::Template()
     : timer(nullptr)
 {
@@ -74,9 +82,20 @@ void Template::Update()
 {
     //lv_obj_fade_out(View.ui.image, 1000, 100);
 
-    lv_img_set_src(View.ui.image, ResourcePool::GetImage("app_icon_hdpi_boxing_png"));
-    lv_obj_fade_in(View.ui.image, 2000, 100);
+    //lv_img_set_src(View.ui.image, ResourcePool::GetImage("image_001"));
+    //lv_obj_fade_in(View.ui.image, 2000, 100);
+    if (num == ubNumberOfFiles)
+    {
+        num = 1;
+    }
 
+    //    printf("%d: %s\r\n", num, (char*)str);
+   sprintf((char*)str, "image_0%02d",num);
+    lv_img_set_src(View.ui.image, ResourcePool::GetImage((char*)str));
+    //lv_img_set_src(View.ui.image, ResourcePool::GetImage("image_001"));
+
+    lv_obj_fade_in(View.ui.image, 3000, 0); 
+     num++;
 
 }
 

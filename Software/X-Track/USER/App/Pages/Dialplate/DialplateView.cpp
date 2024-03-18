@@ -32,7 +32,7 @@ void DialplateView::Create(lv_obj_t* root)
 
                ANIM_DEF(200, ui.bottomInfo.labelClockhour, y, -lv_obj_get_height(ui.bottomInfo.labelClockhour), y_tar_bottom),
                 //ANIM_OPA_DEF(200, ui.bottomInfo.labelClockhour),
-				ANIM_DEF(200, ui.bottomInfo.labelClockmin, y, lv_obj_get_height(ui.bottomInfo.labelClockmin)+400, y_tar_min),
+				ANIM_DEF(200, ui.bottomInfo.labelClockmin, y, lv_obj_get_height(ui.bottomInfo.labelClockmin) + 400, y_tar_min),
 
 						//ANIM_OPA_DEF(500, ui.bottomInfo.labelweek),
           /*              ANIM_DEF(600, ui.btnCont.btnRec, height, 0, h_tar_btn),
@@ -462,15 +462,15 @@ void DialplateView::BottomInfo_Create(lv_obj_t* par)
     //lv_obj_set_style_text_font(ui_label_hour_1, ResourcePool::GetFont("Number_extra"), LV_PART_MAIN | LV_STATE_DEFAULT);
     //ui.bottomInfo.labelClockhour = ui_label_hour_1;
 
-    ////    ui_label_hour_2 = lv_label_create(ui_hour_group);
-    ////    lv_obj_set_width(ui_label_hour_2, LV_SIZE_CONTENT);   /// 1
-    ////    lv_obj_set_height(ui_label_hour_2, LV_SIZE_CONTENT);    /// 1
-    ////    lv_obj_set_x(ui_label_hour_2, 93);
-    ////    lv_obj_set_y(ui_label_hour_2, 67);
-    ////    lv_label_set_text(ui_label_hour_2, "3");
-    ////    lv_obj_set_style_text_color(ui_label_hour_2, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
-    ////    lv_obj_set_style_text_opa(ui_label_hour_2, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ////    lv_obj_set_style_text_font(ui_label_hour_2, &ui_font_Number_extra, LV_PART_MAIN | LV_STATE_DEFAULT);
+    //    ui_label_hour_2 = lv_label_create(ui_hour_group);
+    //    lv_obj_set_width(ui_label_hour_2, LV_SIZE_CONTENT);   /// 1
+    //    lv_obj_set_height(ui_label_hour_2, LV_SIZE_CONTENT);    /// 1
+    //    lv_obj_set_x(ui_label_hour_2, 93);
+    //    lv_obj_set_y(ui_label_hour_2, 67);
+    //    lv_label_set_text(ui_label_hour_2, "3");
+    //    lv_obj_set_style_text_color(ui_label_hour_2, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    //    lv_obj_set_style_text_opa(ui_label_hour_2, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    //    lv_obj_set_style_text_font(ui_label_hour_2, &ui_font_Number_extra, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     //lv_obj_t* ui_label_min = lv_label_create(cont);
     //lv_obj_set_width(ui_label_min, LV_SIZE_CONTENT);   /// 1
@@ -483,25 +483,25 @@ void DialplateView::BottomInfo_Create(lv_obj_t* par)
     //lv_obj_set_style_text_font(ui_label_min, ResourcePool::GetFont("Number_extra"), LV_PART_MAIN | LV_STATE_DEFAULT);
     //ui.bottomInfo.labelClockmin = ui_label_min;
 
-    ////    lv_obj_t* ui_battery_group = ui_batterygroup_create(cont);
-    ////    lv_obj_set_x(ui_battery_group, 0);
-    ////    lv_obj_set_y(ui_battery_group, 4);
+    //    lv_obj_t* ui_battery_group = ui_batterygroup_create(cont);
+    //    lv_obj_set_x(ui_battery_group, 0);
+    //    lv_obj_set_y(ui_battery_group, 4);
 
-    ////    lv_obj_t* ui_date_group = ui_dategroup_create(cont);
-    ////    lv_obj_set_x(ui_date_group, -52);
-    ////    lv_obj_set_y(ui_date_group, 194);
+    //    lv_obj_t* ui_date_group = ui_dategroup_create(cont);
+    //    lv_obj_set_x(ui_date_group, -52);
+    //    lv_obj_set_y(ui_date_group, 194);
 
-    ////    lv_obj_t* ui_step_group = ui_stepgroup_create(cont);
-    ////    lv_obj_set_x(ui_step_group, -2);
-    ////    lv_obj_set_y(ui_step_group, -5);
+    //    lv_obj_t* ui_step_group = ui_stepgroup_create(cont);
+    //    lv_obj_set_x(ui_step_group, -2);
+    //    lv_obj_set_y(ui_step_group, -5);
 
-    ////    lv_obj_t* ui_button_top = ui_buttontop_create(cont);
-    ////    lv_obj_set_x(ui_button_top, 89);
-    ////    lv_obj_set_y(ui_button_top, -206);
+    //    lv_obj_t* ui_button_top = ui_buttontop_create(cont);
+    //    lv_obj_set_x(ui_button_top, 89);
+    //    lv_obj_set_y(ui_button_top, -206);
 
-    ////    lv_obj_t* ui_button_down = ui_buttondown_create(cont);
-    ////    lv_obj_set_x(ui_button_down, 92);
-    ////    lv_obj_set_y(ui_button_down, 202);
+    //    lv_obj_t* ui_button_down = ui_buttondown_create(cont);
+    //    lv_obj_set_x(ui_button_down, 92);
+    //    lv_obj_set_y(ui_button_down, 202);
 
     //lv_obj_t* ui_sec_dot = lv_img_create(cont);
     //lv_img_set_src(ui_sec_dot, ResourcePool::GetImage("sec_dot_png"));

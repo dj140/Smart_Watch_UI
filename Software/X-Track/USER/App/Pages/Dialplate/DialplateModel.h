@@ -27,16 +27,13 @@ public:
     void Deinit();
 
     bool GetGPSReady();
-    bool GetClockmin();
+    void GetClockinfo(HAL::Clock_Info_t* info);
 
     float GetSpeed()
     {
-        return sportStatusInfo.speedKph;
+        return 18;
     }
-    float GetClock()
-    {
-        return clock.second;
-    }
+
     float GetAvgSpeed()
     {
         return sportStatusInfo.speedAvgKph;

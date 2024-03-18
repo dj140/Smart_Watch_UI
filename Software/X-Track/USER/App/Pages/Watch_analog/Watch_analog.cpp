@@ -21,6 +21,7 @@ void Watch_analog::onCustomAttrConfig()
 
 void Watch_analog::onViewLoad()
 {
+    Model.Init();
     LV_LOG_USER("begin");
     View.Create(_root);
     AttachEvent(_root);
@@ -35,14 +36,14 @@ void Watch_analog::onViewDidLoad()
 void Watch_analog::onViewWillAppear()
 {
     LV_LOG_USER("begin");
-    timer = lv_timer_create(onTimerUpdate, 3000, this);
     View.AppearAnimStart();
-
 }
 
 void Watch_analog::onViewDidAppear()
 {
-    LV_LOG_USER("begin");
+    LV_LOG_USER("begin"); 
+    timer = lv_timer_create(onTimerUpdate, 1000, this);
+
 }
 
 void Watch_analog::onViewWillDisappear()
@@ -76,9 +77,18 @@ void Watch_analog::AttachEvent(lv_obj_t* obj)
 
 void Watch_analog::Update()
 {
-    //lv_img_set_src(View.ui.image, ResourcePool::GetImage("app_icon_hdpi_boxing_png"));
-    //lv_obj_fade_in(View.ui.image, 2000, 100);
+    HAL::Clock_Info_t clockInfo;
+    Model.GetClockinfo(&clockInfo);
+    lv_label_set_text_fmt(View.ui.ui_clock, "%02d   %02d", clockInfo.hour, clockInfo.minute);
+    lv_label_set_text_fmt(View.ui.ui_year, "%04d", clockInfo.year);
+    //lv_label_set_text_fmt(View.ui.ui_month, "%03S", clockInfo.month);
+    //LV_LOG_USER("month: %d", clockInfo.month);
+    //LV_LOG_USER("week: %d", clockInfo.week);
 
+    //lv_label_set_text_fmt(View.ui.ui_year, );
+    lv_img_set_angle(View.ui.ui_hour, clockInfo.hour * 300);
+    lv_img_set_angle(View.ui.ui_min, clockInfo.minute * 60);
+    lv_img_set_angle(View.ui.ui_sec, clockInfo.second * 60);
 
 }
 
@@ -117,13 +127,21 @@ void Watch_analog::onEvent(lv_event_t* event)
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_BOTTOM) {
             instance->_Manager->Push("Pages/Setting");
         }
+        //if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
+        //    instance->_Manager->Replace("Pages/Watch_cxk");
+        //}
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-            instance->_Manager->Replace("Pages/Watch_cxk");
+            instance->_Manager->Replace("Pages/Dialplate");
         }
     }
+    //if (code == LV_EVENT_LONG_PRESSED)
+    //{
+    //    instance->_Manager->Replace("Pages/Watch_cxk");
+
+    //}
     if (code == LV_EVENT_LONG_PRESSED)
     {
-        instance->_Manager->Replace("Pages/Watch_cxk");
+        instance->_Manager->Replace("Pages/Dialplate");
 
     }
 }

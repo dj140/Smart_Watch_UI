@@ -1,6 +1,7 @@
-#include "HAL.h"
+﻿#include "HAL.h"
 #include <time.h>
 #include <stdio.h>
+
 
 void HAL::Clock_GetInfo(Clock_Info_t* info)
 {

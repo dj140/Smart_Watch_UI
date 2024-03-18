@@ -43,9 +43,21 @@ static bool Clock_Calibrate(Account* account, HAL::GPS_Info_t* gpsInfo)
     }
     return retval;
 }
-
+//static void onTimer(Account* account)
+//{
+//    HAL::Clock_Info_t clockInfo;
+//    HAL::Clock_GetInfo(&clockInfo);
+//
+//    account->Commit(&clockInfo, sizeof(clockInfo));
+//    account->Publish();
+//}
 static int onEvent(Account* account, Account::EventParam_t* param)
 {
+    //if (param->event == Account::EVENT_TIMER)
+    //{
+    //    onTimer(account);
+    //    return Account::RES_OK;
+    //}
     if (param->event == Account::EVENT_PUB_PUBLISH)
     {
         if (param->size == sizeof(HAL::GPS_Info_t))

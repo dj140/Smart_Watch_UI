@@ -16,7 +16,7 @@ void Blood_oxy::onCustomAttrConfig()
 {
     LV_LOG_USER("begin");
     SetCustomCacheEnable(true);
-    SetCustomLoadAnimType(PageManager::LOAD_ANIM_OVER_TOP, 1000, lv_anim_path_bounce);
+    SetCustomLoadAnimType(PageManager::LOAD_ANIM_OVER_TOP, 500, lv_anim_path_overshoot);
 }
 
 void Blood_oxy::onViewLoad()

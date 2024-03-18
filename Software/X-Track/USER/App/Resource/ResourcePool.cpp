@@ -90,6 +90,19 @@ do{\
         IMPORT_IMG(cxk_hour);
         IMPORT_IMG(cxk_min);
         IMPORT_IMG(cxk_sec);
+        IMPORT_IMG(SHM_Logo);
+        IMPORT_IMG(image_001);
+        IMPORT_IMG(image_002);
+        IMPORT_IMG(image_003);
+        IMPORT_IMG(image_004);
+        IMPORT_IMG(image_005);
+        IMPORT_IMG(image_006);
+        IMPORT_IMG(image_007);
+        IMPORT_IMG(image_008);
+        IMPORT_IMG(image_009);
+        IMPORT_IMG(image_010);
+        IMPORT_IMG(image_011);
+        IMPORT_IMG(setting_menu);
 
     }
 
