@@ -8,8 +8,8 @@ using namespace Page;
 void Watch_analog_View::Create(lv_obj_t* root)
 {
     Watch_Create(root);
-    Model.Init();
-
+    myaccount = new Account("Watch_analog_View", DataProc::Center(), 0, this);
+    myaccount->Subscribe("Clock");
 }
 void Watch_analog_View::Watch_Create(lv_obj_t* par)
 {
@@ -248,11 +248,20 @@ void Watch_analog_View::Delete()
         lv_anim_timeline_del(ui.anim_timeline);
         ui.anim_timeline = nullptr;
     }
+    //if (myaccount)
+    //{
+    //    delete myaccount;
+    //    myaccount = nullptr;
+    //}
 }
 void Watch_analog_View::AppearAnimStart(bool reverse)
 {
     HAL::Clock_Info_t clockInfo;
-    Model.GetClockinfo(&clockInfo);
+    //HAL::Clock_Info_t* clockInfo;
+    //Model.GetClockinfo(&clockInfo);
+    memset(&clockInfo, 0, sizeof(HAL::Clock_Info_t));
+    myaccount->Pull("Clock", &clockInfo, sizeof(HAL::Clock_Info_t));
+
     ui.anim_timeline = lv_anim_timeline_create();
 
 #define ANIM_DEF(start_time, obj, attr, start, end) \

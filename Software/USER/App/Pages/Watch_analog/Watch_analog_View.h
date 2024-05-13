@@ -38,7 +38,7 @@ public:
 private:
     void Watch_Create(lv_obj_t* par);
     Watch_analog_Model Model;
-
+    Account* myaccount;
 };
 
 }

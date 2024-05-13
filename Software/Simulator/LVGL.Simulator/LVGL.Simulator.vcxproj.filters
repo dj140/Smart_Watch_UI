@@ -397,12 +397,6 @@
     <Filter Include="lvgl\src\extra\widgets\menu">
       <UniqueIdentifier>{b4a98cd0-65f8-449c-a4c3-513b3e89e47c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="App\Utils\lv_img_png">
-      <UniqueIdentifier>{9b8c5a23-b05a-4343-9f18-079416be5cf8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\Utils\lv_img_png\PNGdec">
-      <UniqueIdentifier>{48d96f6d-e671-4bf4-9744-7aeebccb5411}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App\Utils\lv_anim_label">
       <UniqueIdentifier>{05f8a74d-5443-4751-a75b-95bdd619725b}</UniqueIdentifier>
     </Filter>
@@ -1001,36 +995,6 @@
     </ClInclude>
     <ClInclude Include="lvgl\src\extra\widgets\menu\lv_menu.h">
       <Filter>lvgl\src\extra\widgets\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\lv_img_png.h">
-      <Filter>App\Utils\lv_img_png</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\crc32.h">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inffast.h">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inffixed.h">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inflate.h">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inftrees.h">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\PNGdec.h">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\zconf.h">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\zlib.h">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\zutil.h">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
     </ClInclude>
     <ClInclude Include="..\..\USER\App\Utils\lv_anim_label\lv_anim_label.h">
       <Filter>App\Utils\lv_anim_label</Filter>
@@ -2093,33 +2057,6 @@
     <ClCompile Include="lvgl\src\extra\widgets\menu\lv_menu.c">
       <Filter>lvgl\src\extra\widgets\menu</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\lv_img_png.cpp">
-      <Filter>App\Utils\lv_img_png</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\adler32.c">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\crc32.c">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\infback.c">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inffast.c">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inflate.c">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inftrees.c">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\PNGdec.cpp">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\zutil.c">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\USER\App\Utils\lv_anim_label\lv_anim_label.c">
       <Filter>App\Utils\lv_anim_label</Filter>
     </ClCompile>
@@ -3075,9 +3012,6 @@
     </None>
     <None Include="..\..\USER\App\Common\Music\MusicCode.h">
       <Filter>App\Common\Music</Filter>
-    </None>
-    <None Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\png.inl">
-      <Filter>App\Utils\lv_img_png\PNGdec</Filter>
     </None>
     <None Include="lv_fs_if\.gitignore">
       <Filter>lv_fs_if</Filter>

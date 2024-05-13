@@ -14,15 +14,15 @@ Watch_analog::~Watch_analog()
 
 void Watch_analog::onCustomAttrConfig()
 {
-    LV_LOG_USER("begin");
+    LV_LOG_USER("begin");  
     SetCustomCacheEnable(true);
     SetCustomLoadAnimType(PageManager::LOAD_ANIM_OVER_RIGHT, 200, lv_anim_path_ease_in);
 }
 
 void Watch_analog::onViewLoad()
 {
+    LV_LOG_USER("begin");  
     Model.Init();
-    LV_LOG_USER("begin");
     View.Create(_root);
     AttachEvent(_root);
     AttachEvent(View.ui.cont);
@@ -55,12 +55,15 @@ void Watch_analog::onViewDidDisappear()
 {
     LV_LOG_USER("begin");
     lv_timer_del(timer);
+    View.Delete();
+
 }
 
 void Watch_analog::onViewUnload()
 {
     LV_LOG_USER("begin");
     View.Delete();
+    Model.Deinit();
 
 }
 
@@ -131,7 +134,7 @@ void Watch_analog::onEvent(lv_event_t* event)
         //    instance->_Manager->Replace("Pages/Watch_cxk");
         //}
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-            instance->_Manager->Replace("Pages/Dialplate");
+            instance->_Manager->Pop();
         }
     }
     //if (code == LV_EVENT_LONG_PRESSED)
@@ -141,7 +144,7 @@ void Watch_analog::onEvent(lv_event_t* event)
     //}
     if (code == LV_EVENT_LONG_PRESSED)
     {
-        instance->_Manager->Replace("Pages/Dialplate");
+        instance->_Manager->Pop();
 
     }
 }

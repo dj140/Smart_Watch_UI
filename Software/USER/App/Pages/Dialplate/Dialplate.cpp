@@ -256,12 +256,12 @@ void Dialplate::onEvent(lv_event_t* event)
             instance->_Manager->Push("Pages/Setting");
         }
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-            instance->_Manager->Replace("Pages/Watch_analog");
+            instance->_Manager->Push("Pages/Watch_analog");
         }
     }
     if (code == LV_EVENT_LONG_PRESSED)
     {
-        instance->_Manager->Replace("Pages/Watch_analog");
+        instance->_Manager->Push("Pages/Watch_analog");
 
     }
     //if (code == LV_EVENT_PRESSED)

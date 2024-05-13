@@ -143,16 +143,6 @@
     <ClInclude Include="..\..\USER\App\Utils\lv_anim_label\lv_anim_label.h" />
     <ClInclude Include="..\..\USER\App\Utils\lv_ext\lv_anim_timeline_wrapper.h" />
     <ClInclude Include="..\..\USER\App\Utils\lv_ext\lv_obj_ext_func.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\lv_img_png.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\crc32.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inffast.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inffixed.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inflate.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inftrees.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\PNGdec.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\zconf.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\zlib.h" />
-    <ClInclude Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\zutil.h" />
     <ClInclude Include="..\..\USER\App\Utils\lv_poly_line\lv_poly_line.h" />
     <ClInclude Include="..\..\USER\App\Utils\MapConv\GPS_Transform\GPS_Transform.h" />
     <ClInclude Include="..\..\USER\App\Utils\MapConv\MapConv.h" />
@@ -449,15 +439,6 @@
     <ClCompile Include="..\..\USER\App\Utils\lv_anim_label\lv_anim_label.c" />
     <ClCompile Include="..\..\USER\App\Utils\lv_ext\lv_anim_timeline_wrapper.c" />
     <ClCompile Include="..\..\USER\App\Utils\lv_ext\lv_obj_ext_func.cpp" />
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\lv_img_png.cpp" />
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\adler32.c" />
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\crc32.c" />
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\infback.c" />
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inffast.c" />
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inflate.c" />
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\inftrees.c" />
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\PNGdec.cpp" />
-    <ClCompile Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\zutil.c" />
     <ClCompile Include="..\..\USER\App\Utils\lv_poly_line\lv_poly_line.cpp" />
     <ClCompile Include="..\..\USER\App\Utils\MapConv\GPS_Transform\GPS_Transform.c" />
     <ClCompile Include="..\..\USER\App\Utils\MapConv\MapConv.cpp" />
@@ -742,7 +723,6 @@
   <ItemGroup>
     <None Include="..\..\USER\App\Common\DataProc\DP_LIST.inc" />
     <None Include="..\..\USER\App\Common\Music\MusicCode.h" />
-    <None Include="..\..\USER\App\Utils\lv_img_png\PNGdec\src\png.inl" />
     <None Include="lvgl\.github\ISSUE_TEMPLATE\bug-report.md" />
     <None Include="lvgl\.github\ISSUE_TEMPLATE\config.yml" />
     <None Include="lvgl\.github\ISSUE_TEMPLATE\dev-discussion.md" />

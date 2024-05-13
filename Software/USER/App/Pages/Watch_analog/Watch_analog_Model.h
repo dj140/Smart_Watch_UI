@@ -19,6 +19,7 @@ public:
 
 
     void Init();
+    void Deinit();
 
 private:
     Account* account;

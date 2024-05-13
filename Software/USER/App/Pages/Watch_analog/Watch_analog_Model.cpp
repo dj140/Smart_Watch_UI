@@ -9,7 +9,14 @@ void Watch_analog_Model::Init()
 
     account->SetEventCallback(onEvent);
 }
-
+void Watch_analog_Model::Deinit()
+{
+    if (account)
+    {
+        delete account;
+        account = nullptr;
+    }
+}
 uint32_t Watch_analog_Model::GetData()
 {
     return lv_tick_get();
@@ -42,3 +49,4 @@ int Watch_analog_Model::onEvent(Account* account, Account::EventParam_t* param)
 
     return Account::RES_OK;
 }
+

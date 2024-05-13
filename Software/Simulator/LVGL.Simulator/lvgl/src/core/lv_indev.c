@@ -1133,29 +1133,29 @@ void indev_gesture(_lv_indev_proc_t* proc)
             if (proc->types.pointer.gesture_sum.x > 0)
             {
                 proc->types.pointer.gesture_dir = LV_DIR_RIGHT;
-                LV_LOG_USER("LV_DIR_RIGHT !!!!!!");
+                //LV_LOG_USER("LV_DIR_RIGHT !!!!!!");
             }
             else
             {
                 proc->types.pointer.gesture_dir = LV_DIR_LEFT;
-                LV_LOG_USER("LV_DIR_LEFT !!!!!!");
+                //LV_LOG_USER("LV_DIR_LEFT !!!!!!");
             }
         }
         else {
             if (proc->types.pointer.gesture_sum.y > 0)
             {
                 proc->types.pointer.gesture_dir = LV_DIR_BOTTOM;
-                LV_LOG_USER("LV_DIR_BOTTOM !!!!!!");
+                //LV_LOG_USER("LV_DIR_BOTTOM !!!!!!");
             }
             else
             {
                 proc->types.pointer.gesture_dir = LV_DIR_TOP;
-                LV_LOG_USER("LV_DIR_TOP !!!!!!");
+                //LV_LOG_USER("LV_DIR_TOP !!!!!!");
             }
         }
 
         lv_event_send(gesture_obj, LV_EVENT_GESTURE, indev_act);
-        LV_LOG_USER("gesture_obj:%d,  LV_EVENT_GESTURE:%d", gesture_obj, LV_EVENT_GESTURE);
+        //LV_LOG_USER("gesture_obj:%d,  LV_EVENT_GESTURE:%d", gesture_obj, LV_EVENT_GESTURE);
         if (indev_reset_check(proc)) return;
     }
 }
