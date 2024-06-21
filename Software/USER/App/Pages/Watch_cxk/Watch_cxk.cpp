@@ -121,9 +121,9 @@ void Watch_cxk::onEvent(lv_event_t* event)
             instance->_Manager->Replace("Pages/Dialplate");
         }
     }
-    if (code == LV_EVENT_LONG_PRESSED)
-    {
-        instance->_Manager->Replace("Pages/Dialplate");
+    //if (code == LV_EVENT_LONG_PRESSED)
+    //{
+    //    instance->_Manager->Replace("Pages/Dialplate");
 
-    }
+    //}
 }

@@ -5,9 +5,9 @@ using namespace Page;
 
 void SystemInfosModel::Init()
 {
-    account = new Account("SystemInfosModel", DataProc::Center(), 0, this);
+    //account = new Account("SystemInfosModel", DataProc::Center(), 0, this);
 
-    account->Subscribe("SportStatus");
+    //account->Subscribe("SportStatus");
     //account->Subscribe("GPS");
     //account->Subscribe("MAG");
     //account->Subscribe("IMU");
@@ -19,11 +19,11 @@ void SystemInfosModel::Init()
 
 void SystemInfosModel::Deinit()
 {
-    if (account)
-    {
-        delete account;
-        account = nullptr;
-    }
+    //if (account)
+    //{
+    //    delete account;
+    //    account = nullptr;
+    //}
 }
 
 void SystemInfosModel::GetSportInfo(

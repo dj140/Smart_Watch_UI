@@ -14,17 +14,18 @@ SystemInfos::~SystemInfos()
 
 void SystemInfos::onCustomAttrConfig()
 {
-
+    SetCustomCacheEnable(true);
+    SetCustomLoadAnimType(PageManager::LOAD_ANIM_OVER_LEFT, 200, lv_anim_path_ease_in);
 }
 
 void SystemInfos::onViewLoad()
 {
-    Model.Init();
+    //Model.Init();
     View.Create(_root);
-    //AttachEvent(_root);
+    AttachEvent(_root);
     //lv_obj_add_event_cb(View.LauncherData_t.appPanel, onEvent, LV_EVENT_SCROLL, this);
 
-    AttachEvent(View.LauncherData_t.appPanel);
+    //AttachEvent(View.LauncherData_t.appPanel);
     //AttachEvent(View.ui.sport.cont);
     //AttachEvent(View.ui.gps.cont);
 
@@ -43,7 +44,7 @@ void SystemInfos::onViewDidLoad()
 
 void SystemInfos::onViewWillAppear()
 {
-    Model.SetStatusBarStyle(DataProc::STATUS_BAR_STYLE_BLACK);
+    //Model.SetStatusBarStyle(DataProc::STATUS_BAR_STYLE_BLACK);
 
     timer = lv_timer_create(onTimerUpdate, 1000, this);
     lv_timer_ready(timer);
@@ -62,7 +63,7 @@ void SystemInfos::onViewDidAppear()
 
 void SystemInfos::onViewWillDisappear()
 {
-    //lv_obj_fade_out(_root, 300, 0);
+    lv_obj_fade_out(_root, 300, 0);
 }
 
 void SystemInfos::onViewDidDisappear()
@@ -73,7 +74,7 @@ void SystemInfos::onViewDidDisappear()
 void SystemInfos::onViewUnload()
 {
     View.Delete();
-    Model.Deinit();
+    //Model.Deinit();
 }
 
 void SystemInfos::onViewDidUnload()
@@ -147,7 +148,7 @@ void SystemInfos::onEvent(lv_event_t* event)
         }
         if (obj == instance->View.ui.gps.cont)
         {
-            //instance->_Manager->Push("Pages/Watch_analog");
+            instance->_Manager->Push("Pages/StopWatch");
         }
     }
     //if (code == LV_EVENT_PRESSED)

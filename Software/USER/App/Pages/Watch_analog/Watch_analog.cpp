@@ -37,6 +37,8 @@ void Watch_analog::onViewWillAppear()
 {
     LV_LOG_USER("begin");
     View.AppearAnimStart();
+    lv_obj_set_style_opa(_root, LV_OPA_TRANSP, 0);
+    lv_obj_fade_in(_root, 500, 0);
 }
 
 void Watch_analog::onViewDidAppear()
@@ -130,21 +132,12 @@ void Watch_analog::onEvent(lv_event_t* event)
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_BOTTOM) {
             instance->_Manager->Push("Pages/Setting");
         }
-        //if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-        //    instance->_Manager->Replace("Pages/Watch_cxk");
-        //}
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-            instance->_Manager->Pop();
+            instance->_Manager->Replace("Pages/Watch_cxk");
         }
+        //if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
+        //    instance->_Manager->Pop();
+        //}
     }
-    //if (code == LV_EVENT_LONG_PRESSED)
-    //{
-    //    instance->_Manager->Replace("Pages/Watch_cxk");
 
-    //}
-    if (code == LV_EVENT_LONG_PRESSED)
-    {
-        instance->_Manager->Pop();
-
-    }
 }

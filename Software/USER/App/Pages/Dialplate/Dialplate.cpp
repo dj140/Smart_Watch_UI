@@ -60,6 +60,8 @@ void Dialplate::onViewWillAppear()
     Update();
 
     View.AppearAnimStart();
+    lv_obj_set_style_opa(_root, LV_OPA_TRANSP, 0);
+    lv_obj_fade_in(_root, 500, 0);
 }
 
 void Dialplate::onViewDidAppear()
@@ -256,14 +258,14 @@ void Dialplate::onEvent(lv_event_t* event)
             instance->_Manager->Push("Pages/Setting");
         }
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-            instance->_Manager->Push("Pages/Watch_analog");
+            instance->_Manager->Replace("Pages/Watch_analog");
         }
     }
-    if (code == LV_EVENT_LONG_PRESSED)
-    {
-        instance->_Manager->Push("Pages/Watch_analog");
+    //if (code == LV_EVENT_LONG_PRESSED)
+    //{
+    //    instance->_Manager->Replace("Pages/Watch_analog");
 
-    }
+    //}
     //if (code == LV_EVENT_PRESSED)
     //{
     //    instance->_Manager->Replace("Pages/Watch_analog");

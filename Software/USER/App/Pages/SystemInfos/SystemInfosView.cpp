@@ -11,23 +11,23 @@ void SystemInfosView::Create(lv_obj_t* root)
     LauncherData_t.icon_x = 0;
     LauncherData_t.icon_y = 0;
     LauncherData_t.is_long_row = true;
-    lv_obj_t* appPanel = lv_obj_create(root);
-    lv_obj_remove_style_all(appPanel);
+    //lv_obj_t* appPanel = lv_obj_create(root);
+    //lv_obj_remove_style_all(appPanel);
 
-    lv_obj_set_size(appPanel, 397, 397);
+    lv_obj_set_size(root, 397, 397);
     //lv_obj_clear_flag(root, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_clear_flag(appPanel, LV_OBJ_FLAG_GESTURE_BUBBLE);      /// Flags
-    lv_obj_align(appPanel, LV_ALIGN_BOTTOM_MID, 0, 0);
-    LauncherData_t.appPanel = appPanel;
+    lv_obj_clear_flag(root, LV_OBJ_FLAG_GESTURE_BUBBLE);      /// Flags
+    lv_obj_align(root, LV_ALIGN_BOTTOM_MID, 0, 0);
+    LauncherData_t.appPanel = root;
     /* Ser style */
-    lv_obj_set_style_radius(appPanel, 0, LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(appPanel, 0, LV_STATE_DEFAULT);
-    lv_obj_set_style_border_opa(appPanel, 0, LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(root, 0, LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(root, 0, LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(root, 0, LV_STATE_DEFAULT);
 
     /* Add scroll flags */
-    lv_obj_add_flag(appPanel, LV_OBJ_FLAG_SCROLL_ELASTIC | LV_OBJ_FLAG_SCROLL_MOMENTUM);
-    lv_obj_set_scrollbar_mode(appPanel, LV_SCROLLBAR_MODE_ON);
-    lv_obj_set_scroll_dir(appPanel, LV_DIR_VER);
+    lv_obj_add_flag(root, LV_OBJ_FLAG_SCROLL_ELASTIC | LV_OBJ_FLAG_SCROLL_MOMENTUM);
+    lv_obj_set_scrollbar_mode(root, LV_SCROLLBAR_MODE_ON);
+    lv_obj_set_scroll_dir(root, LV_DIR_VER);
     /* Update bubble config */
     _bubble_cfg.iconColMax = 400 / 108;
     _bubble_cfg.iconRowMax = 400 / 108;
@@ -41,20 +41,20 @@ void SystemInfosView::Create(lv_obj_t* root)
     _bubble_cfg.iconXoffset = -(400 / 2) + (_bubble_cfg.iconSpaceX / 2);
     _bubble_cfg.iconYoffset = -(400 / 2) + (_bubble_cfg.iconSpaceY / 2) + gap_between_icon;
     /* Item Sport */
-    Item_Create(&ui.sport, appPanel, "Sport", "app_icon_Instagram");
-    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_LinkedIn");
-    Item_Create(&ui.gps, appPanel, "Battery", "app_icon_Meta");
-    Item_Create(&ui.imu, appPanel, "Battery", "app_icon_WeChat");
-    Item_Create(&ui.mag, appPanel, "Battery", "app_icon_Vimeo");
-    Item_Create(&ui.rtc, appPanel, "Battery", "app_icon_Twitter");
-    Item_Create(&ui.storage, appPanel, "Battery", "app_icon_Spotify");
-    Item_Create(&ui.system, appPanel, "Battery", "app_icon_Reddit");
-    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
-    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
-    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
-    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
-    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
-    lv_obj_scroll_to_y(appPanel, 1, LV_ANIM_OFF);
+    Item_Create(&ui.sport, root, "Sport", "app_icon_Instagram");
+    Item_Create(&ui.battery, root, "Battery", "app_icon_LinkedIn");
+    Item_Create(&ui.gps, root, "Battery", "app_icon_Meta");
+    Item_Create(&ui.imu, root, "Battery", "app_icon_WeChat");
+    Item_Create(&ui.mag, root, "Battery", "app_icon_Vimeo");
+    Item_Create(&ui.rtc, root, "Battery", "app_icon_Twitter");
+    Item_Create(&ui.storage, root, "Battery", "app_icon_Spotify");
+    Item_Create(&ui.system, root, "Battery", "app_icon_Reddit");
+    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
+    lv_obj_scroll_to_y(root, 1, LV_ANIM_OFF);
 
 }
 

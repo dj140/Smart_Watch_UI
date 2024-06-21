@@ -113,6 +113,9 @@
     <ClInclude Include="..\..\USER\App\Pages\Startup\StartupModel.h" />
     <ClInclude Include="..\..\USER\App\Pages\Startup\StartupView.h" />
     <ClInclude Include="..\..\USER\App\Pages\StatusBar\StatusBar.h" />
+    <ClInclude Include="..\..\USER\App\Pages\StopWatch\StopWatch.h" />
+    <ClInclude Include="..\..\USER\App\Pages\StopWatch\StopWatch_Model.h" />
+    <ClInclude Include="..\..\USER\App\Pages\StopWatch\StopWatch_View.h" />
     <ClInclude Include="..\..\USER\App\Pages\SystemInfos\SystemInfos.h" />
     <ClInclude Include="..\..\USER\App\Pages\SystemInfos\SystemInfosModel.h" />
     <ClInclude Include="..\..\USER\App\Pages\SystemInfos\SystemInfosView.h" />
@@ -330,6 +333,9 @@
     <ClCompile Include="..\..\USER\App\Pages\Startup\StartupModel.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\Startup\StartupView.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\StatusBar\StatusBar.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\StopWatch\StopWatch.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\StopWatch\StopWatch_Model.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\StopWatch\StopWatch_View.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\SystemInfos\SystemInfos.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\SystemInfos\SystemInfosModel.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\SystemInfos\SystemInfosView.cpp" />
@@ -430,6 +436,10 @@
     <ClCompile Include="..\..\USER\App\Resource\Image\img_src_wave1_png.c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\img_src_wave2_png.c" />
     <ClCompile Include="..\..\USER\App\Resource\Image\setting_menu.c" />
+    <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_add.c" />
+    <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_pause.c" />
+    <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_reset.c" />
+    <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_start.c" />
     <ClCompile Include="..\..\USER\App\Resource\ResourcePool.cpp" />
     <ClCompile Include="..\..\USER\App\Utils\DataCenter\Account.cpp" />
     <ClCompile Include="..\..\USER\App\Utils\DataCenter\DataCenter.cpp" />

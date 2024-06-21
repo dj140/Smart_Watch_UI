@@ -104,6 +104,7 @@ void App_Init()
     manager.Install("Heartbeat_Measuing", "Pages/Heartbeat_Measuing");
     manager.Install("Setting", "Pages/Setting");
     manager.Install("Watch_cxk", "Pages/Watch_cxk");
+    manager.Install("StopWatch", "Pages/StopWatch");
 
     manager.SetGlobalLoadAnimType(PageManager::LOAD_ANIM_OVER_TOP);
 

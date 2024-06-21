@@ -427,6 +427,9 @@
     <Filter Include="App\Pages\Watch_cxk">
       <UniqueIdentifier>{92bcb197-e41d-4dbd-8e39-a8dc00fbd749}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Pages\StopWatch">
+      <UniqueIdentifier>{a0306b11-9d5e-4fdf-91ed-be49efbde4ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lvgl\examples\get_started\lv_example_get_started.h">
@@ -1061,6 +1064,15 @@
     </ClInclude>
     <ClInclude Include="..\..\USER\App\Pages\Watch_cxk\Watch_cxk_View.h">
       <Filter>App\Pages\Watch_cxk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\StopWatch\StopWatch.h">
+      <Filter>App\Pages\StopWatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\StopWatch\StopWatch_Model.h">
+      <Filter>App\Pages\StopWatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\StopWatch\StopWatch_View.h">
+      <Filter>App\Pages\StopWatch</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -2331,6 +2343,27 @@
       <Filter>App\Resource\Image</Filter>
     </ClCompile>
     <ClCompile Include="..\..\USER\App\Resource\Image\setting_menu.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\StopWatch\StopWatch.cpp">
+      <Filter>App\Pages\StopWatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\StopWatch\StopWatch_Model.cpp">
+      <Filter>App\Pages\StopWatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\StopWatch\StopWatch_View.cpp">
+      <Filter>App\Pages\StopWatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_start.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_reset.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_add.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_pause.c">
       <Filter>App\Resource\Image</Filter>
     </ClCompile>
   </ItemGroup>

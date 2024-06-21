@@ -37,6 +37,8 @@ void Setting::onViewWillAppear()
 {
     LV_LOG_USER("begin");
     timer = lv_timer_create(onTimerUpdate, 3000, this);
+    lv_obj_set_style_opa(_root, LV_OPA_TRANSP, 0);
+    lv_obj_fade_in(_root, 300, 0);
 }
 
 void Setting::onViewDidAppear()
@@ -47,6 +49,8 @@ void Setting::onViewDidAppear()
 void Setting::onViewWillDisappear()
 {
     LV_LOG_USER("begin");
+    lv_obj_fade_out(_root, 300, 0);
+
 }
 
 void Setting::onViewDidDisappear()
