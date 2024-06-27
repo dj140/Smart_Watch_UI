@@ -430,6 +430,18 @@
     <Filter Include="App\Pages\StopWatch">
       <UniqueIdentifier>{a0306b11-9d5e-4fdf-91ed-be49efbde4ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\WatchFace">
+      <UniqueIdentifier>{14d0476e-fa02-4ae3-8a65-fbc54ebc833c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\WatchFace\34_2_dial">
+      <UniqueIdentifier>{386cb42e-d072-44bd-bba7-b8d29f99984b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\WatchFace\34_2_dial\assets">
+      <UniqueIdentifier>{0a785d95-c819-4016-b6e6-89103154a7a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Pages\WatchFace_Select">
+      <UniqueIdentifier>{a11626f5-c7bc-4373-b635-3299cb5726a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lvgl\examples\get_started\lv_example_get_started.h">
@@ -1073,6 +1085,18 @@
     </ClInclude>
     <ClInclude Include="..\..\USER\App\Pages\StopWatch\StopWatch_View.h">
       <Filter>App\Pages\StopWatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\WatchFace\34_2_dial\34_2_dial.h">
+      <Filter>App\WatchFace\34_2_dial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select.h">
+      <Filter>App\Pages\WatchFace_Select</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select_Model.h">
+      <Filter>App\Pages\WatchFace_Select</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select_View.h">
+      <Filter>App\Pages\WatchFace_Select</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -2365,6 +2389,42 @@
     </ClCompile>
     <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_pause.c">
       <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\34_2_dial.c">
+      <Filter>App\WatchFace\34_2_dial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_0_304.c">
+      <Filter>App\WatchFace\34_2_dial\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_1_58396.c">
+      <Filter>App\WatchFace\34_2_dial\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_2_58427.c">
+      <Filter>App\WatchFace\34_2_dial\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_9_59419.c">
+      <Filter>App\WatchFace\34_2_dial\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_11_86291.c">
+      <Filter>App\WatchFace\34_2_dial\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_13_113625.c">
+      <Filter>App\WatchFace\34_2_dial\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_14_118067.c">
+      <Filter>App\WatchFace\34_2_dial\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_preview.c">
+      <Filter>App\WatchFace\34_2_dial\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select.cpp">
+      <Filter>App\Pages\WatchFace_Select</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select_Model.cpp">
+      <Filter>App\Pages\WatchFace_Select</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select_View.cpp">
+      <Filter>App\Pages\WatchFace_Select</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

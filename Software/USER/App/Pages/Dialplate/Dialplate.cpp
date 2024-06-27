@@ -261,11 +261,11 @@ void Dialplate::onEvent(lv_event_t* event)
             instance->_Manager->Replace("Pages/Watch_analog");
         }
     }
-    //if (code == LV_EVENT_LONG_PRESSED)
-    //{
-    //    instance->_Manager->Replace("Pages/Watch_analog");
+    if (code == LV_EVENT_LONG_PRESSED)
+    {
+        instance->_Manager->Replace("Pages/WatchFace_Select");
 
-    //}
+    }
     //if (code == LV_EVENT_PRESSED)
     //{
     //    instance->_Manager->Replace("Pages/Watch_analog");

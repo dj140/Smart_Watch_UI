@@ -105,6 +105,7 @@ void App_Init()
     manager.Install("Setting", "Pages/Setting");
     manager.Install("Watch_cxk", "Pages/Watch_cxk");
     manager.Install("StopWatch", "Pages/StopWatch");
+    manager.Install("WatchFace_Select", "Pages/WatchFace_Select");
 
     manager.SetGlobalLoadAnimType(PageManager::LOAD_ANIM_OVER_TOP);
 

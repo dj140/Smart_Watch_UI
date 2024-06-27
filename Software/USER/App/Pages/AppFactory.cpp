@@ -32,6 +32,7 @@
 #include "Setting/Setting.h"
 #include "Watch_cxk/Watch_cxk.h"
 #include "StopWatch/StopWatch.h"
+#include "WatchFace_Select/WatchFace_Select.h"
 
 #define APP_CLASS_MATCH(className)\
 do{\
@@ -54,6 +55,7 @@ PageBase* AppFactory::CreatePage(const char* name)
     APP_CLASS_MATCH(Setting);
     APP_CLASS_MATCH(Watch_cxk);
     APP_CLASS_MATCH(StopWatch);
+    APP_CLASS_MATCH(WatchFace_Select);
 
     return nullptr;
 }

@@ -71,7 +71,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(ProjectDir)..\..\USER\App;$(ProjectDir)..\..\USER\App\Utils\ArduinoJson\src</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(ProjectDir)..\..\USER\App</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\USER\App;$(ProjectDir)..\..\USER\App\Utils\ArduinoJson\src</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\..\USER\App;$(ProjectDir)..\..\USER\App\Utils\ArduinoJson\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Tomas\Documents\MY_Porject\Smart_Watch_UI\Software\USER\App\WatchFace;$(ProjectDir)..\..\USER\App;$(ProjectDir)..\..\USER\App\Utils\ArduinoJson\src</AdditionalIncludeDirectories>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ProgramDatabase</DebugInformationFormat>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</MultiProcessorCompilation>
@@ -119,6 +119,9 @@
     <ClInclude Include="..\..\USER\App\Pages\SystemInfos\SystemInfos.h" />
     <ClInclude Include="..\..\USER\App\Pages\SystemInfos\SystemInfosModel.h" />
     <ClInclude Include="..\..\USER\App\Pages\SystemInfos\SystemInfosView.h" />
+    <ClInclude Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select.h" />
+    <ClInclude Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select_Model.h" />
+    <ClInclude Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select_View.h" />
     <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog.h" />
     <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_Model.h" />
     <ClInclude Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.h" />
@@ -171,6 +174,7 @@
     <ClInclude Include="..\..\USER\App\Utils\WString\WCharacter.h" />
     <ClInclude Include="..\..\USER\App\Utils\WString\WString.h" />
     <ClInclude Include="..\..\USER\App\Version.h" />
+    <ClInclude Include="..\..\USER\App\WatchFace\34_2_dial\34_2_dial.h" />
     <ClInclude Include="HAL\HAL.h" />
     <ClInclude Include="lvgl\examples\anim\lv_example_anim.h" />
     <ClInclude Include="lvgl\examples\get_started\lv_example_get_started.h" />
@@ -339,6 +343,9 @@
     <ClCompile Include="..\..\USER\App\Pages\SystemInfos\SystemInfos.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\SystemInfos\SystemInfosModel.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\SystemInfos\SystemInfosView.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select_Model.cpp" />
+    <ClCompile Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select_View.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_Model.cpp" />
     <ClCompile Include="..\..\USER\App\Pages\Watch_analog\Watch_analog_View.cpp" />
@@ -473,6 +480,15 @@
     <ClCompile Include="..\..\USER\App\Utils\TrackFilter\TrackPointFilter.cpp" />
     <ClCompile Include="..\..\USER\App\Utils\WString\dtostrf.c" />
     <ClCompile Include="..\..\USER\App\Utils\WString\WString.cpp" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\34_2_dial.c" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_0_304.c" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_11_86291.c" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_13_113625.c" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_14_118067.c" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_1_58396.c" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_2_58427.c" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_9_59419.c" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_preview.c" />
     <ClCompile Include="HAL\HAL.cpp" />
     <ClCompile Include="HAL\HAL_Audio.cpp" />
     <ClCompile Include="HAL\HAL_Buzz.cpp" />
