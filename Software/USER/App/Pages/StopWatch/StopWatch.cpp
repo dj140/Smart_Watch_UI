@@ -152,6 +152,9 @@ void StopWatch::onEvent(lv_event_t* event)
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
             instance->_Manager->Pop();
         }
+        if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_LEFT) {
+            instance->_Manager->Pop();
+        }
     }
     if (code == LV_EVENT_CLICKED)
     {

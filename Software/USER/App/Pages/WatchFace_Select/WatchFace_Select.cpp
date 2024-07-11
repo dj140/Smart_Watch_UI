@@ -13,7 +13,7 @@ WatchFace_Select::~WatchFace_Select()
 
 void WatchFace_Select::onCustomAttrConfig()
 {
-    SetCustomLoadAnimType(PageManager::LOAD_ANIM_NONE);
+    SetCustomLoadAnimType(PageManager::LOAD_ANIM_FADE_ON, 200, lv_anim_path_ease_in);
 }
 
 void WatchFace_Select::onViewLoad()
@@ -22,9 +22,10 @@ void WatchFace_Select::onViewLoad()
     View.Create(_root);
     AttachEvent(_root);
     AttachEvent(View.ui.faceSelect);
-    AttachEvent(View.faces[1].watchface);
-    AttachEvent(View.faces[0].watchface);
-    AttachEvent(View.faces[2].watchface);
+    for (int i = 0; i < View.numFaces; i++)
+    {
+        AttachEvent(View.faces[i].watchface);
+    }
 
 }
 
@@ -54,6 +55,7 @@ void WatchFace_Select::onViewWillDisappear()
     lastFocus = lv_group_get_focused(group);
     lv_group_remove_all_objs(group);
     lv_timer_del(timer);
+    View.numFaces = 0;
     //View.AppearAnimStart(true);
 }
 
@@ -105,17 +107,17 @@ void WatchFace_Select::onEvent(lv_event_t* event)
         LV_LOG_USER("LV_EVENT_GESTURE %d", code);
 
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_LEFT) {
-            instance->_Manager->Push("Pages/SystemInfos");
+            instance->_Manager->Pop();
         }
-        if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_TOP) {
-            instance->_Manager->Push("Pages/Blood_oxy");
-        }
-        if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_BOTTOM) {
-            instance->_Manager->Push("Pages/Setting");
-        }
-        if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-            instance->_Manager->Replace("Pages/Watch_analog");
-        }
+        //if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_TOP) {
+        //    instance->_Manager->Push("Pages/Blood_oxy");
+        //}
+        //if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_BOTTOM) {
+        //    instance->_Manager->Push("Pages/Setting");
+        //}
+        //if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
+        //    instance->_Manager->Replace("Pages/Watch_analog");
+        //}
     }
     if (code == LV_EVENT_CLICKED)
     {
@@ -123,12 +125,16 @@ void WatchFace_Select::onEvent(lv_event_t* event)
 
         if (obj == instance->View.faces[0].watchface)
         {
-        instance->_Manager->Replace("Pages/Watch_analog");
+            instance->_Manager->Replace("Pages/Watch_cxk");
 
-        }
+        } 
         if (obj == instance->View.faces[1].watchface)
         {
-            instance->_Manager->Replace("Pages/Watch_analog");
+        instance->_Manager->Replace("Pages/Watch_analog");
+        }
+        if (obj == instance->View.faces[2].watchface)
+        {
+            instance->_Manager->Replace("Pages/Dialplate");
 
         }
     }

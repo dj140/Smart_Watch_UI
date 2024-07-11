@@ -43,7 +43,7 @@ do{\
         IMPORT_IMG(menu);
         IMPORT_IMG(origin_point);
         IMPORT_IMG(pause);
-        IMPORT_IMG(satellite);
+        //IMPORT_IMG(satellite);
         IMPORT_IMG(sd_card);
         IMPORT_IMG(start);
         IMPORT_IMG(stop);
@@ -103,6 +103,11 @@ do{\
         IMPORT_IMG(image_010);
         IMPORT_IMG(image_011);
         IMPORT_IMG(setting_menu);
+        IMPORT_IMG(Ping_icon);
+        IMPORT_IMG(Silence_icon);
+        IMPORT_IMG(flash_light_icon);
+        IMPORT_IMG(wifi_icon);
+
 
     }
 

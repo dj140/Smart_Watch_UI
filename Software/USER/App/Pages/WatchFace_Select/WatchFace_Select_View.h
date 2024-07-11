@@ -61,11 +61,11 @@ public:
 
         struct
         {
-            lv_obj_t* cont;
-            lv_obj_t* btnMap;
-            lv_obj_t* btnRec;
-            lv_obj_t* btnMenu;
-        } btnCont;
+            lv_obj_t* style1;
+            lv_obj_t* style2;
+            lv_obj_t* style3;
+            lv_obj_t* style4;
+        } watchface;
 
         lv_anim_timeline_t* anim_timeline;
     } ui;
@@ -74,7 +74,7 @@ public:
     void Delete();
     void AppearAnimStart(bool reverse = false);
     void addWatchface(const char* name, const void* src, int index);
-    void registerWatchface_cb(const char* name, const void* value);
+    void registerWatchface_cb(const char* name, const void* value, lv_obj_t* par);
 
 private:
     void init_face_select(lv_obj_t* par);

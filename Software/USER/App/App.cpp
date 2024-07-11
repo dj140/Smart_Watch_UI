@@ -78,7 +78,7 @@ void App_Init()
     lv_obj_clear_flag(scr, LV_OBJ_FLAG_SCROLLABLE);
     lv_disp_set_bg_color(lv_disp_get_default(), lv_color_black());
 
-    /* Set root default style */
+    ///* Set root default style */
     static lv_style_t rootStyle;
     lv_style_init(&rootStyle);
     lv_style_set_width(&rootStyle, 397);
@@ -91,7 +91,7 @@ void App_Init()
     ResourcePool::Init();
 
     /* Initialize status bar */
-    Page::StatusBar_Create(lv_layer_top());
+    //Page::StatusBar_Create(lv_layer_top());
 
     /* Initialize pages */
     manager.Install("Template",    "Pages/_Template");
@@ -107,9 +107,9 @@ void App_Init()
     manager.Install("StopWatch", "Pages/StopWatch");
     manager.Install("WatchFace_Select", "Pages/WatchFace_Select");
 
-    manager.SetGlobalLoadAnimType(PageManager::LOAD_ANIM_OVER_TOP);
+    //manager.SetGlobalLoadAnimType(PageManager::LOAD_ANIM_OVER_TOP);
 
-    manager.Push("Pages/Startup");
+    manager.Push("Pages/_Template");
 }
 
 void App_Uninit()

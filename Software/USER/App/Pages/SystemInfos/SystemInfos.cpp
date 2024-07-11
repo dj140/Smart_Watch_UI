@@ -23,9 +23,9 @@ void SystemInfos::onViewLoad()
     //Model.Init();
     View.Create(_root);
     AttachEvent(_root);
-    //lv_obj_add_event_cb(View.LauncherData_t.appPanel, onEvent, LV_EVENT_SCROLL, this);
+    lv_obj_add_event_cb(View.LauncherData_t.appPanel, onEvent, LV_EVENT_SCROLL, this);
 
-    //AttachEvent(View.LauncherData_t.appPanel);
+    AttachEvent(View.LauncherData_t.appPanel);
     //AttachEvent(View.ui.sport.cont);
     //AttachEvent(View.ui.gps.cont);
 
@@ -56,8 +56,8 @@ void SystemInfos::onViewWillAppear()
 
 void SystemInfos::onViewDidAppear()
 {
-    //lv_group_t* group = lv_group_get_default();
-    //LV_ASSERT_NULL(group);
+    lv_group_t* group = lv_group_get_default();
+    LV_ASSERT_NULL(group);
     //View.onFocus(group);
 }
 

@@ -16,7 +16,7 @@ void Watch_cxk::onCustomAttrConfig()
 {
     LV_LOG_USER("begin");
     SetCustomCacheEnable(true);
-    SetCustomLoadAnimType(PageManager::LOAD_ANIM_OVER_RIGHT, 200, lv_anim_path_ease_in);
+    SetCustomLoadAnimType(PageManager::LOAD_ANIM_FADE_ON, 2000, lv_anim_path_ease_in);
 }
 
 void Watch_cxk::onViewLoad()
@@ -118,12 +118,12 @@ void Watch_cxk::onEvent(lv_event_t* event)
             instance->_Manager->Push("Pages/Setting");
         }
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-            instance->_Manager->Replace("Pages/Dialplate");
+            instance->_Manager->Replace("Pages/StopWatch");
         }
     }
-    //if (code == LV_EVENT_LONG_PRESSED)
-    //{
-    //    instance->_Manager->Replace("Pages/Dialplate");
+    if (code == LV_EVENT_LONG_PRESSED)
+    {
+        instance->_Manager->Replace("Pages/WatchFace_Select");
 
-    //}
+    }
 }

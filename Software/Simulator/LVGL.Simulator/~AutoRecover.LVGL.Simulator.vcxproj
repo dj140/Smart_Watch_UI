@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3CA6E070-4AC1-475E-BB17-CF29AE4806DF}</ProjectGuid>
@@ -181,6 +181,7 @@
     <ClInclude Include="..\..\USER\App\Utils\WString\WCharacter.h" />
     <ClInclude Include="..\..\USER\App\Utils\WString\WString.h" />
     <ClInclude Include="..\..\USER\App\Version.h" />
+    <ClInclude Include="..\..\USER\App\WatchFace\34_2_dial\34_2_dial.h" />
     <ClInclude Include="HAL\HAL.h" />
     <ClInclude Include="lvgl\examples\anim\lv_example_anim.h" />
     <ClInclude Include="lvgl\examples\get_started\lv_example_get_started.h" />
@@ -490,6 +491,7 @@
     <ClCompile Include="..\..\USER\App\Utils\TrackFilter\TrackPointFilter.cpp" />
     <ClCompile Include="..\..\USER\App\Utils\WString\dtostrf.c" />
     <ClCompile Include="..\..\USER\App\Utils\WString\WString.cpp" />
+    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\34_2_dial.c" />
     <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_0_304.c" />
     <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_11_86291.c" />
     <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_13_113625.c" />
@@ -754,6 +756,8 @@
     <ClCompile Include="lv_fs_if\lv_fs_if.c" />
     <ClCompile Include="lv_fs_if\lv_fs_pc.c" />
     <ClCompile Include="lv_fs_if\lv_fs_posix.c" />
+    <ClCompile Include="test\NewFolder1\FileName.cpp" />
+    <ClCompile Include="test\test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\USER\App\Common\DataProc\DP_LIST.inc" />

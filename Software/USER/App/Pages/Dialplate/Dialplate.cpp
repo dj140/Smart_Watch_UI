@@ -258,10 +258,10 @@ void Dialplate::onEvent(lv_event_t* event)
             instance->_Manager->Push("Pages/Setting");
         }
         if (lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT) {
-            instance->_Manager->Replace("Pages/Watch_analog");
+            instance->_Manager->Replace("Pages/StopWatch");
         }
     }
-    if (code == LV_EVENT_LONG_PRESSED)
+    else if (code == LV_EVENT_LONG_PRESSED)
     {
         instance->_Manager->Replace("Pages/WatchFace_Select");
 

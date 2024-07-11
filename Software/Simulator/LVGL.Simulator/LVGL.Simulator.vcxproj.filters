@@ -1086,9 +1086,6 @@
     <ClInclude Include="..\..\USER\App\Pages\StopWatch\StopWatch_View.h">
       <Filter>App\Pages\StopWatch</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\USER\App\WatchFace\34_2_dial\34_2_dial.h">
-      <Filter>App\WatchFace\34_2_dial</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select.h">
       <Filter>App\Pages\WatchFace_Select</Filter>
     </ClInclude>
@@ -2390,9 +2387,6 @@
     <ClCompile Include="..\..\USER\App\Resource\Image\stopwatch_pause.c">
       <Filter>App\Resource\Image</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\34_2_dial.c">
-      <Filter>App\WatchFace\34_2_dial</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\USER\App\WatchFace\34_2_dial\assets\face_34_2_dial_dial_img_0_304.c">
       <Filter>App\WatchFace\34_2_dial\assets</Filter>
     </ClCompile>
@@ -2425,6 +2419,18 @@
     </ClCompile>
     <ClCompile Include="..\..\USER\App\Pages\WatchFace_Select\WatchFace_Select_View.cpp">
       <Filter>App\Pages\WatchFace_Select</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\wifi_icon.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\Silence_icon.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\Ping_icon.c">
+      <Filter>App\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\USER\App\Resource\Image\flash_light_icon.c">
+      <Filter>App\Resource\Image</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

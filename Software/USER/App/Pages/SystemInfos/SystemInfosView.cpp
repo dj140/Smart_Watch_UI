@@ -1,38 +1,48 @@
 #include "SystemInfosView.h"
 #include "stdlib.h"
 
+
+#define ARRAY_SIZE(arr) (sizeof((arr)) / sizeof((arr)[0]))
+
 using namespace Page;
+
+
 
 #define ITEM_HEIGHT_MIN   100
 #define ITEM_PAD          ((LV_VER_RES - ITEM_HEIGHT_MIN) / 2)
 
+
 void SystemInfosView::Create(lv_obj_t* root)
 {
+    /*Create an object with the new style*/
+    lv_obj_clear_flag(root, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_t* appPanel = lv_obj_create(root);
+
     LauncherData_t.icon_x = 0;
     LauncherData_t.icon_y = 0;
     LauncherData_t.is_long_row = true;
-    //lv_obj_t* appPanel = lv_obj_create(root);
     //lv_obj_remove_style_all(appPanel);
 
-    lv_obj_set_size(root, 397, 397);
+    lv_obj_set_size(appPanel, 400, 400);
     //lv_obj_clear_flag(root, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_clear_flag(root, LV_OBJ_FLAG_GESTURE_BUBBLE);      /// Flags
-    lv_obj_align(root, LV_ALIGN_BOTTOM_MID, 0, 0);
-    LauncherData_t.appPanel = root;
+    //lv_obj_add_flag(appPanel, LV_OBJ_FLAG_SCROLLABLE);
+    lv_obj_clear_flag(appPanel, LV_OBJ_FLAG_GESTURE_BUBBLE);      /// Flags
+    lv_obj_align(appPanel, LV_ALIGN_CENTER, 0, 0);
+    LauncherData_t.appPanel = appPanel;
     /* Ser style */
-    lv_obj_set_style_radius(root, 0, LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(root, 0, LV_STATE_DEFAULT);
-    lv_obj_set_style_border_opa(root, 0, LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(appPanel, 0, LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(appPanel, 0, LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(appPanel, 0, LV_STATE_DEFAULT);
 
     /* Add scroll flags */
-    lv_obj_add_flag(root, LV_OBJ_FLAG_SCROLL_ELASTIC | LV_OBJ_FLAG_SCROLL_MOMENTUM);
-    lv_obj_set_scrollbar_mode(root, LV_SCROLLBAR_MODE_ON);
-    lv_obj_set_scroll_dir(root, LV_DIR_VER);
+    //lv_obj_add_flag(appPanel, LV_OBJ_FLAG_SCROLL_ELASTIC | LV_OBJ_FLAG_SCROLL_MOMENTUM);
+    lv_obj_set_scrollbar_mode(appPanel, LV_SCROLLBAR_MODE_ON);
+    lv_obj_set_scroll_dir(appPanel, LV_DIR_ALL);
     /* Update bubble config */
     _bubble_cfg.iconColMax = 400 / 108;
     _bubble_cfg.iconRowMax = 400 / 108;
-    _bubble_cfg.iconColNum = (13 - 1) / _bubble_cfg.iconRowMax;
-    if (((13 - 1) % _bubble_cfg.iconRowMax) != 0) {
+    _bubble_cfg.iconColNum = (20 - 1) / _bubble_cfg.iconRowMax;
+    if (((20 - 1) % _bubble_cfg.iconRowMax) != 0) {
         _bubble_cfg.iconColNum++;
     }
     _bubble_cfg.iconSpaceX = 400 / _bubble_cfg.iconColMax;
@@ -41,20 +51,26 @@ void SystemInfosView::Create(lv_obj_t* root)
     _bubble_cfg.iconXoffset = -(400 / 2) + (_bubble_cfg.iconSpaceX / 2);
     _bubble_cfg.iconYoffset = -(400 / 2) + (_bubble_cfg.iconSpaceY / 2) + gap_between_icon;
     /* Item Sport */
-    Item_Create(&ui.sport, root, "Sport", "app_icon_Instagram");
-    Item_Create(&ui.battery, root, "Battery", "app_icon_LinkedIn");
-    Item_Create(&ui.gps, root, "Battery", "app_icon_Meta");
-    Item_Create(&ui.imu, root, "Battery", "app_icon_WeChat");
-    Item_Create(&ui.mag, root, "Battery", "app_icon_Vimeo");
-    Item_Create(&ui.rtc, root, "Battery", "app_icon_Twitter");
-    Item_Create(&ui.storage, root, "Battery", "app_icon_Spotify");
-    Item_Create(&ui.system, root, "Battery", "app_icon_Reddit");
-    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
-    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
-    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
-    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
-    Item_Create(&ui.battery, root, "Battery", "app_icon_Instagram");
-    lv_obj_scroll_to_y(root, 1, LV_ANIM_OFF);
+    Item_Create(&ui.sport, appPanel, "Sport", "app_icon_Instagram");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_LinkedIn");
+    Item_Create(&ui.gps, appPanel, "Battery", "app_icon_Meta");
+    Item_Create(&ui.imu, appPanel, "Battery", "app_icon_WeChat");
+    Item_Create(&ui.mag, appPanel, "Battery", "app_icon_Vimeo");
+    Item_Create(&ui.rtc, appPanel, "Battery", "app_icon_Twitter");
+    Item_Create(&ui.storage, appPanel, "Battery", "app_icon_Spotify");
+    Item_Create(&ui.system, appPanel, "Battery", "app_icon_Reddit");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
+    Item_Create(&ui.battery, appPanel, "Battery", "app_icon_Instagram");
+
+
+    lv_obj_scroll_to_y(appPanel, 1, LV_ANIM_OFF);
 
 }
 
@@ -202,11 +218,12 @@ void SystemInfosView::Item_Create(
     /* Put App in hexagon mesh */
     if (!LauncherData_t.is_long_row) {
         lv_obj_set_pos(app, LauncherData_t.icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
-        LV_LOG_USER("lv_obj_set_pos x:%d,y: %d", LauncherData_t.icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
     }
     else {
         lv_obj_set_pos(app, LauncherData_t.icon_x + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
     }
+    LV_LOG_USER("lv_obj_set_pos x:%d,y: %d", LauncherData_t.icon_x + _bubble_cfg.iconSpaceX / 2 + _bubble_cfg.iconXoffset, LauncherData_t.icon_y + _bubble_cfg.iconYoffset);
+
     LauncherData_t.icon_x += _bubble_cfg.iconSpaceX;
 
     /* Go to next more Apps row */
@@ -223,7 +240,7 @@ void SystemInfosView::Item_Create(
     }
 
     lv_obj_add_flag(app, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    //lv_obj_clear_flag(app, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_add_flag(app, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
     /* Add event callback */
     lv_obj_add_flag(app, LV_OBJ_FLAG_CLICKABLE);
@@ -231,152 +248,3 @@ void SystemInfosView::Item_Create(
     lv_obj_set_style_img_recolor_opa(app, 50, LV_STATE_PRESSED);
 }
 
-void SystemInfosView::SetSport(
-    float trip,
-    const char* time,
-    float maxSpd
-)
-{
-    lv_label_set_text_fmt(
-        ui.sport.labelData,
-        "%0.2fkm\n"
-        "%s\n"
-        "%0.1fkm/h",
-        trip,
-        time,
-        maxSpd
-    );
-}
-
-void SystemInfosView::SetGPS(
-    float lat,
-    float lng,
-    float alt,
-    const char* utc,
-    float course,
-    float speed
-)
-{
-    /*  lv_label_set_text_fmt(
-          ui.gps.labelData,
-          "%0.6f\n"
-          "%0.6f\n"
-          "%0.2fm\n"
-          "%s\n"
-          "%0.1f deg\n"
-          "%0.1fkm/h",
-          lat,
-          lng,
-          alt,
-          utc,
-          course,
-          speed
-      );*/
-}
-
-void SystemInfosView::SetMAG(
-    float dir,
-    int x,
-    int y,
-    int z
-)
-{
-    /* lv_label_set_text_fmt(
-         ui.mag.labelData,
-         "%0.1f deg\n"
-         "%d\n"
-         "%d\n"
-         "%d",
-         dir,
-         x,
-         y,
-         z
-     );*/
-}
-
-void SystemInfosView::SetIMU(
-    int step,
-    const char* info
-)
-{
-    /*lv_label_set_text_fmt(
-        ui.imu.labelData,
-        "%d\n"
-        "%s",
-        step,
-        info
-    );*/
-}
-
-void SystemInfosView::SetRTC(
-    const char* dateTime
-)
-{
-    /*   lv_label_set_text(
-           ui.rtc.labelData,
-           dateTime
-       );*/
-}
-
-void SystemInfosView::SetBattery(
-    int usage,
-    float voltage,
-    const char* state
-)
-{
-    /*   lv_label_set_text_fmt(
-           ui.battery.labelData,
-           "%d%%\n"
-           "%0.2fV\n"
-           "%s",
-           usage,
-           voltage,
-           state
-       );*/
-}
-
-void SystemInfosView::SetStorage(
-    const char* detect,
-    const char* size,
-    const char* type,
-    const char* version
-)
-{
-    /*  lv_label_set_text_fmt(
-          ui.storage.labelData,
-          "%s\n"
-          "%s\n"
-          "%s\n"
-          "%s",
-          detect,
-          size,
-          type,
-          version
-      );*/
-}
-
-void SystemInfosView::SetSystem(
-    const char* firmVer,
-    const char* authorName,
-    const char* lvglVer,
-    const char* bootTime,
-    const char* compilerName,
-    const char* bulidTime
-)
-{
-    /* lv_label_set_text_fmt(
-         ui.system.labelData,
-         "%s\n"
-         "%s\n"
-         "%s\n"
-         "%s\n"
-         "%s\n"
-         "%s",
-         firmVer,
-         authorName,
-         lvglVer,
-         bootTime,
-         compilerName,
-         bulidTime
-     );*/
-}

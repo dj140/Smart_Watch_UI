@@ -22,7 +22,13 @@
 //#define LV_HOR_RES 397
 //#define LV_VER_RES 397
 
+#ifndef DISP_HOR_RES
+#define DISP_HOR_RES                400u
+#endif
 
+#ifndef DISP_VER_RES
+#define DISP_VER_RES                400u
+#endif
 /*====================
    COLOR SETTINGS
  *====================*/

@@ -5,7 +5,12 @@
 
 namespace Page
 {
-
+    extern "C" {
+        LV_IMG_DECLARE(stopwatch_add);
+        LV_IMG_DECLARE(stopwatch_pause);
+        LV_IMG_DECLARE(stopwatch_start);
+        LV_IMG_DECLARE(img_src_cxk_bg);
+    }
 class SystemInfosView
 {
 public:
